@@ -7,10 +7,15 @@ class Gnb extends Component {
     render(){
         return(
             <Fragment>
-                <ul className="gng_bar">
-                    <li>Home</li>
-                    <li>임시 보호</li>
-                </ul>
+                <div className="gnb_wrap">
+                    <ul className="gnb_bar">
+                        <li>Home</li>
+                        <li><NavLink exact to ={"/cat_TmpProtection.js"}>임시 보호</NavLink></li>
+                        <li>입양</li>
+                        <li>중고</li>
+                        <li>추천상품</li>
+                    </ul>
+                </div>
             </Fragment>
         );
     }

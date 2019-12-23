@@ -1,9 +1,18 @@
-.gng_bar {
-    text-align: center;
-    margin:0;
-    padding: 10px 0;
+.gnb_wrap {
+    width: 100%;
+    position: fixed;
+    top: 0; 
+    left: 0;
+    z-index: 10;
 }
-.gng_bar li {
+.gnb_wrap .gnb_bar {
+    width: 1200px;
+    text-align: right;
+    margin: 0 auto;
+    padding: 10px 0;
+
+}
+.gnb_wrap .gnb_bar li {
     display: inline-block; 
     list-style: none; 
     padding: 0 10px;
