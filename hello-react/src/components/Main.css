@@ -2,3 +2,10 @@
     font-size: 20px; 
     text-align: center;
 }
+
+.tmpProtection ul li div.img{
+  width: 100px; 
+  height: 100px; 
+  background-size: cover; 
+  background-position: center;
+}
