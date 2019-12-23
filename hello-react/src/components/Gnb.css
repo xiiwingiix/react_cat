@@ -1,6 +1,5 @@
 .gng_bar {
     text-align: center;
-    background-color: salmon;
     margin:0;
     padding: 10px 0;
 }
@@ -8,5 +7,4 @@
     display: inline-block; 
     list-style: none; 
     padding: 0 10px;
-    color:#fff;
 }
