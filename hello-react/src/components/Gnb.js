@@ -13,7 +13,8 @@ class Gnb extends Component {
                         <li><NavLink exact to ={"/cat_TmpProtection.js"}>임시 보호</NavLink></li>
                         <li>입양</li>
                         <li>중고</li>
-                        <li>추천상품</li>
+                        <li>추천 상품</li>
+                        <li>스토리 톡톡</li>
                     </ul>
                 </div>
             </Fragment>
