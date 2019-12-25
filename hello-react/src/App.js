@@ -6,22 +6,33 @@ import './App.css';
 
 import Gnb from './components/Gnb.js'
 import Main from './components/Main.js'
-import TmpProtection from "./components/TmpProtection.js"
+import Login from './components/Login.js'
+import Join from './components/Join.js'
+import Foster from "./components/Foster.js"
+import Adoption from "./components/Adoption.js"
+import SecondUse from './components/SecondUse.js'
+import Recommendation from './components/Recommendation.js'
+import Talktalk from './components/Talktalk.js'
 
 class App extends Component{
   render(){
     return(
-      <React.Fragment>
+      <Fragment>
         <Router>
-            <div>
-            <Gnb/>
-            <Switch>
-                <Route exact path={"/TmpProtection"} component={TmpProtection}/>
-            </Switch>
-            </div>
+          <Gnb/>
+          <Switch>
+            <Route path="/Foster.js" component={Foster}/>  
+            <Route path="/" component={Main}/>
+            <Route path="/main.js" component={Main}/>
+            <Route path="/adoption.js" component={Adoption}/>
+            <Route path="/secondUse.js" component={SecondUse}/>
+            <Route path="/recommendation.js" component={Recommendation}/>
+            <Route path="/talktalk.js" component={Talktalk}/>
+            <Route path="/login.js" component={Login}/>
+            <Route path="/join.js" component={Join}/>
+          </Switch>
         </Router>
-        <Main/>
-      </React.Fragment>
+      </Fragment>
     );
   }
 }
