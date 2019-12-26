@@ -1,17 +1,36 @@
 import React from 'react';
 import Swiper from 'swiper';
 
-import './Main.css';
+import '../css/Main.css';
+import banner_01 from '../img/banner_01.jpg';
+import banner_02 from '../img/banner_02.png';
 
 class Main extends React.Component {
     componentDidMount(){
       //임시 보호 swiper
-      var swiper = new Swiper('.tmpProtection', {
+      var multiple_swiper = new Swiper('.multiple', {
         slidesPerView: 5,
         spaceBetween: 30,
         pagination: {
           el: '.swiper-pagination',
           clickable: true,
+        }
+      });
+
+      var Main_banner = new Swiper('.Main_banner', {
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
         },
       });
     }
@@ -19,7 +38,19 @@ class Main extends React.Component {
         return(
             <React.Fragment>
               <div className="main">
-                <div className="swiper-container tmpProtection">
+                <div className="swiper-container Main_banner">
+                    <ul className="swiper-wrapper">
+                        <li className="swiper-slide"><img src={banner_01}/></li>
+                        <li className="swiper-slide"><img src={banner_02}/></li>
+                    </ul>
+                    {/* Add Pagination */}
+                    <div className="swiper-pagination"></div>
+                    {/* Add Arrows */}
+                    <div className="swiper-button-next"></div>
+                    <div className="swiper-button-prev"></div>
+                </div>
+                
+                <div className="swiper-container multiple">
                     <h1 className="main_tit">보호가 필요해요!</h1>
                     <ul className="swiper-wrapper">
                         <li className="swiper-slide">
@@ -48,7 +79,7 @@ class Main extends React.Component {
                         </li>
                     </ul>
                 </div>
-                <div className="swiper-container tmpProtection">
+                <div className="swiper-container multiple">
                     <h1 className="main_tit">새로운 가족을 찾아요!</h1>
                     <ul className="swiper-wrapper">
                         <li className="swiper-slide">
