@@ -22,7 +22,7 @@ class App extends Component{
           <Gnb/>
           <Switch>
             <Route path="/Foster.js" component={Foster}/>  
-            <Route path="/" component={Main}/>
+            <Route exact path="/" component={Main}/>
             <Route path="/main.js" component={Main}/>
             <Route path="/adoption.js" component={Adoption}/>
             <Route path="/secondUse.js" component={SecondUse}/>
