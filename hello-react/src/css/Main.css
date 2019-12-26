@@ -1,19 +1,19 @@
 /* main slider */
-.Main_banner {
+.main .Main_banner {
   margin-top: 50px;
 }
 /* multiple slider*/
-.multiple {
+.main .multiple {
   width:1200px; 
   margin: 0 auto;
 }
-.main_tit {
-    font-size: 20px; 
+.main .multiple .main_tit {
+    font-size: 30px; 
     text-align: center;
     margin: 100px 0 50px;
 }
 
-.multiple ul li div.img{
+.main .multiple ul li div.img{
   width: 100%;
   padding-bottom: 100%; 
   background-size: cover; 
