@@ -60,7 +60,8 @@ class Main extends React.Component {
                             <li className="swiper-slide">
                                 <div className="img" style={{backgroundImage:"url(https://i.pinimg.com/564x/ba/f4/4c/baf44ce74e8458729116c5e69ae2c48c.jpg)"}}></div>
                                 <div className="area">
-                                    <p>경기 | 한국고양이 | 남아 </p>
+                                    <p>경기 지역</p>
+                                    <p>[한국고양이 | 남아 | 6개월] </p>
                                     <p>개인사정으로 인해 분양하게 되었습니다. 아가는 착해요</p>
                                 </div>
                             </li>
