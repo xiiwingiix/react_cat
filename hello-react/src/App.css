@@ -18,12 +18,15 @@ li {
 }
 .swiper-button-next, .swiper-button-prev {
     width:106px;
-    height: 100px;
+    height: 127px;
     background-image: url(./img/arrow.png);
     background-repeat: no-repeat;
 }
 .swiper-button-next {
-    background-position: 4px 12px;
+    background-position: 0 0;
+}
+.swiper-button-next {
+    background-position: -105px 0;
 }
 .App {
      text-align : center;

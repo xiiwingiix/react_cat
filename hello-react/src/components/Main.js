@@ -27,10 +27,11 @@ class Main extends React.Component {
         var multiple_swiper = new Swiper('.multiple', {
             slidesPerView: 5,
             spaceBetween: 30,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            }
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            centeredSlides: true,
         });
 
 
