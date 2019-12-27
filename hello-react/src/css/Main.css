@@ -1,27 +1,71 @@
 /* main slider */
 .main .Main_banner {
-  margin-top: 50px;
+    margin-top: 50px;
 }
 /* multiple slider*/
 .main .multiple {
-  width:1200px; 
-  margin: 0 auto;
+    width:1200px; 
+    margin: 0 auto;
 }
 .main .multiple .main_tit {
-    font-size: 30px; 
+    font-size: 18px; 
     text-align: center;
-    margin: 100px 0 50px;
+    margin: 100px 0 0;
 }
 
-.main .multiple ul li div.img{
-  width: 100%;
-  padding-bottom: 100%; 
-  background-size: cover; 
-  background-position: center;
-  border-radius: 50%;
-  margin: 0 auto;
+.main .multiple .main_tit span{
+    font-size: 12px;
+    font-weight: normal;
+    display: inline-block;
+    margin: 10px 0 0;
 }
-.multiple ul li div.area{
-  text-align: center;
-  margin-top: 20px;
+
+.main .multiple .main_tit + .btn_wrap {
+    text-align: right;
+    margin-bottom: 20px;
 }
+
+.main .multiple .main_tit + .btn_wrap span{
+    display: inline-block; 
+    margin-left: 20px;
+}
+
+.main .multiple .main_tit + .btn_wrap span:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.main .multiple ul li img{
+    width: 100%;
+    margin: 0 auto;
+}
+.main .multiple ul li div.area{
+    padding: 20px 0;
+}
+
+.main .multiple ul li div.area p.tit{
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.main .multiple ul li div.area p.txt{
+    font-size: 13px;
+    padding: 15px 0 10px 0;
+    line-height: 21px;
+    color: #959595;
+}
+
+.main .multiple ul li div.area p.txt2 span{
+    display: inline-block;
+    font-size: 13px;
+    padding: 0 10px ;
+    line-height: 21px;
+    color: #959595;
+    border: 1px solid #959595;
+    border-radius: 10px;
+    margin-right: 5px;
+}
+.main .multiple ul li div.area p.txt span{
+    font-weight: 400;
+}
+
