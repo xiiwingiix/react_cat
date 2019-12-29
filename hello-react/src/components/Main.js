@@ -111,7 +111,10 @@ class Main extends React.Component {
                         <div className="swiper-button-prev"></div>
                     </div>
                     <div className="swiper-container multiple adoption">
-                        <h1 className="main_tit">새로운 가족을 찾아요!</h1>
+                        <div className="top">
+                            <h1 className="main_tit">Adoption<br/><span>새로운 가족을 찾아요!</span></h1>
+                            <div className="btn_wrap"><span>Dog</span><span>Cat</span><span>더보기</span></div>
+                        </div>
                         <ul className="swiper-wrapper">
                             <li className="swiper-slide">
                                 <div className="img"> <img src="https://i.pinimg.com/564x/ab/a7/ce/aba7ce37852157a1c686416523178035.jpg"/></div>

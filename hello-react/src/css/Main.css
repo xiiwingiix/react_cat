@@ -22,7 +22,8 @@
 
 .main .multiple .main_tit + .btn_wrap {
     text-align: right;
-    margin-bottom: 20px;
+    margin:0 auto 20px;
+    width: 1200px;
 }
 
 .main .multiple .main_tit + .btn_wrap span{
