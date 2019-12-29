@@ -10,7 +10,10 @@ ul, p{
 li {
     list-style : none;
 }
-
+.content {
+    margin-top: 50px;
+}
+/* 스와이프 */
 .swiper-button-next:after, .swiper-container-rtl .swiper-button-prev:after,
 .swiper-button-prev:after, .swiper-container-rtl .swiper-button-next:after {
     content: ''; 
