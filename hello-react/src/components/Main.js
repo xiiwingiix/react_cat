@@ -1,7 +1,8 @@
 import React from 'react';
 import Swiper from 'swiper';
 
-import '../css/Main.css';
+import '../css/basic.css';
+import '../css/style.css';
 import banner_01 from '../img/banner_01.jpg';
 import banner_02 from '../img/banner_02.png';
 
@@ -52,7 +53,7 @@ class Main extends React.Component {
                         <div className="swiper-button-prev"></div>
                     </div>
                 
-                    <div className="swiper-container multiple foster">
+                    <div className="swiper-container multiple foster_slide">
                         <div className="top">
                             <h1 className="main_tit">Foster<br/><span>보호가 필요해요!</span></h1>
                             <div className="btn_wrap"><span>Dog</span><span>Cat</span><span>더보기</span></div>
@@ -63,7 +64,7 @@ class Main extends React.Component {
                                 <div className="area">
                                     <p className="tit">경기 지역</p>
                                     <p className="txt">개인사정으로 인해 분양하게 되었습니다. 아가는 착해요</p>
-                                    <p className="txt2"><span>한국고양이</span><span>남아</span><span> 6개월</span></p>
+                                    <p className="txt2 roundBtn_wrap"><span>한국고양이</span><span>남아</span><span> 6개월</span></p>
                                 </div>
                             </li>
                             <li className="swiper-slide">
@@ -71,7 +72,7 @@ class Main extends React.Component {
                                 <div className="area">
                                     <p className="tit">경기 지역</p>
                                     <p className="txt">개인사정으로 인해 분양하게 되었습니다. 아가는 착해요</p>
-                                    <p className="txt2"><span>한국고양이</span><span>남아</span><span> 6개월</span></p>
+                                    <p className="txt2 roundBtn_wrap"><span>한국고양이</span><span>남아</span><span> 6개월</span></p>
                                 </div>
                             </li>
                             <li className="swiper-slide">
@@ -79,7 +80,7 @@ class Main extends React.Component {
                                 <div className="area">
                                     <p className="tit">경기 지역</p>
                                     <p className="txt">개인사정으로 인해 분양하게 되었습니다. 아가는 착해요</p>
-                                    <p className="txt2"><span>한국고양이</span><span>남아</span><span> 6개월</span></p>
+                                    <p className="txt2 roundBtn_wrap"><span>한국고양이</span><span>남아</span><span> 6개월</span></p>
                                 </div>
                             </li>
                             <li className="swiper-slide">
@@ -87,7 +88,7 @@ class Main extends React.Component {
                                 <div className="area">
                                     <p className="tit">경기 지역</p>
                                     <p className="txt">개인사정으로 인해 분양하게 되었습니다. 아가는 착해요</p>
-                                    <p className="txt2"><span>한국고양이</span><span>남아</span><span> 6개월</span></p>
+                                    <p className="txt2 roundBtn_wrap"><span>한국고양이</span><span>남아</span><span> 6개월</span></p>
                                 </div>
                             </li>
                             <li className="swiper-slide">
@@ -95,7 +96,7 @@ class Main extends React.Component {
                                 <div className="area">
                                     <p className="tit">경기 지역</p>
                                     <p className="txt">개인사정으로 인해 분양하게 되었습니다. 아가는 착해요</p>
-                                    <p className="txt2"><span>한국고양이</span><span>남아</span><span> 6개월</span></p>
+                                    <p className="txt2 roundBtn_wrap"><span>한국고양이</span><span>남아</span><span> 6개월</span></p>
                                 </div>
                             </li>
                             <li className="swiper-slide">
@@ -103,14 +104,14 @@ class Main extends React.Component {
                                 <div className="area">
                                     <p className="tit">경기 지역</p>
                                     <p className="txt">개인사정으로 인해 분양하게 되었습니다. 아가는 착해요</p>
-                                    <p className="txt2"><span>한국고양이</span><span>남아</span><span> 6개월</span></p>
+                                    <p className="txt2 roundBtn_wrap"><span>한국고양이</span><span>남아</span><span> 6개월</span></p>
                                 </div>
                             </li>
                         </ul>
                         <div className="swiper-button-next"></div>
                         <div className="swiper-button-prev"></div>
                     </div>
-                    <div className="swiper-container multiple adoption">
+                    <div className="swiper-container multiple adoption_slide">
                         <div className="top">
                             <h1 className="main_tit">Adoption<br/><span>새로운 가족을 찾아요!</span></h1>
                             <div className="btn_wrap"><span>Dog</span><span>Cat</span><span>더보기</span></div>
@@ -121,7 +122,7 @@ class Main extends React.Component {
                                 <div className="area">
                                     <p className="tit">경기 지역</p>
                                     <p className="txt">개인사정으로 인해 분양하게 되었습니다. 아가는 착해요</p>
-                                    <p className="txt2"><span>한국고양이</span><span>남아</span><span> 6개월</span></p>
+                                    <p className="txt2 roundBtn_wrap"><span>한국고양이</span><span>남아</span><span> 6개월</span></p>
                                 </div>
                             </li>
                             <li className="swiper-slide">
@@ -129,7 +130,7 @@ class Main extends React.Component {
                                 <div className="area">
                                     <p className="tit">경기 지역</p>
                                     <p className="txt">개인사정으로 인해 분양하게 되었습니다. 아가는 착해요</p>
-                                    <p className="txt2"><span>한국고양이</span><span>남아</span><span> 6개월</span></p>
+                                    <p className="txt2 roundBtn_wrap"><span>한국고양이</span><span>남아</span><span> 6개월</span></p>
                                 </div>
                             </li>
                             <li className="swiper-slide">
@@ -137,7 +138,7 @@ class Main extends React.Component {
                                 <div className="area">
                                     <p className="tit">경기 지역</p>
                                     <p className="txt">개인사정으로 인해 분양하게 되었습니다. 아가는 착해요</p>
-                                    <p className="txt2"><span>한국고양이</span><span>남아</span><span> 6개월</span></p>
+                                    <p className="txt2 roundBtn_wrap"><span>한국고양이</span><span>남아</span><span> 6개월</span></p>
                                 </div>
                             </li>
                             <li className="swiper-slide">
@@ -145,7 +146,7 @@ class Main extends React.Component {
                                 <div className="area">
                                     <p className="tit">경기 지역</p>
                                     <p className="txt">개인사정으로 인해 분양하게 되었습니다. 아가는 착해요</p>
-                                    <p className="txt2"><span>한국고양이</span><span>남아</span><span> 6개월</span></p>
+                                    <p className="txt2 roundBtn_wrap"><span>한국고양이</span><span>남아</span><span> 6개월</span></p>
                                 </div>
                             </li>
                             <li className="swiper-slide">
@@ -153,7 +154,7 @@ class Main extends React.Component {
                                 <div className="area">
                                     <p className="tit">경기 지역</p>
                                     <p className="txt">개인사정으로 인해 분양하게 되었습니다. 아가는 착해요</p>
-                                    <p className="txt2"><span>한국고양이</span><span>남아</span><span> 6개월</span></p>
+                                    <p className="txt2 roundBtn_wrap"><span>한국고양이</span><span>남아</span><span> 6개월</span></p>
                                 </div>
                             </li>
                             <li className="swiper-slide">
@@ -161,7 +162,7 @@ class Main extends React.Component {
                                 <div className="area">
                                     <p className="tit">경기 지역</p>
                                     <p className="txt">개인사정으로 인해 분양하게 되었습니다. 아가는 착해요</p>
-                                    <p className="txt2"><span>한국고양이</span><span>남아</span><span> 6개월</span></p>
+                                    <p className="txt2 roundBtn_wrap"><span>한국고양이</span><span>남아</span><span> 6개월</span></p>
                                 </div>
                             </li>
                         </ul>
