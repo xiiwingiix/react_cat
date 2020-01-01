@@ -19,7 +19,6 @@ class Gnb extends Component {
                     <ul className="gnb_right">
                         <li><NavLink to ={"/login"}>로그인</NavLink></li>
                         <li><NavLink to ={"/join"}>회원가입</NavLink></li>
-                        
                     </ul>
                 </div>
             </Fragment>

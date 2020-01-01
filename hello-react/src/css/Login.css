@@ -1,3 +1,35 @@
 .loginClass{
-  margin-top:50px;
+  margin-top:300px;
+}
+.loginTable{
+  margin: 0 auto;
+}
+.kakao{
+  background-color:#ffe812;
+  border:0;
+  width: 220px;
+  line-height: 30px;
+  text-align: left;
+  border-radius: 5px;
+  vertical-align: middle;
+  margin: 0 auto;
+}
+.kakao img{
+  position: relative;
+  top:5px;
+}
+.naver{
+  background-color: #00b050;
+  border:0;
+  width: 220px;
+  color:#fff;
+  line-height: 30px;
+  text-align: left;
+  border-radius: 5px;
+  vertical-align: middle;
+  margin: 10px auto 0 auto;
+}
+.naver img{
+  position: relative;
+  top:7px;
 }
