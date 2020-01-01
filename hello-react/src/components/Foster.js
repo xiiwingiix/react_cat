@@ -8,7 +8,7 @@ class Foster extends Component {
     render(){
         return(
             <Fragment>
-                <section className="foster content">
+                <section className="animal_list content">
                     <div className="top pb30">
                         <h1 className="tit">임시 보호</h1>
                         <p className="subtxt pb20">잠시나마 우리의 사랑을 나누어 주세요.</p>
@@ -37,7 +37,7 @@ class Foster extends Component {
                             </div>
                         </div>
 
-                        <ul className="foster_list">
+                        <ul className="list_wrap">
                             <li state="on">
                                 <div className="thumb" style={{"backgroundImage":"url(https://www.catjoa.com/dog_sale/photo_free/201912/1577725900_26588400.jpg)"}}></div>  
                                 <div className="txtBx">

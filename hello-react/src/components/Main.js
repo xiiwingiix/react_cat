@@ -32,7 +32,6 @@ class Main extends React.Component {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
             },
-            centeredSlides: true,
         });
 
 
