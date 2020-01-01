@@ -10,6 +10,7 @@ class Login extends Component {
       <Fragment>
         <div className="loginClass">
           <form>
+
             <table className="loginTable">
             <tbody>
               <tr>
