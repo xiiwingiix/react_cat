@@ -45,18 +45,6 @@
     padding: 20px 0;
 }
 
-.main .multiple ul li div.area p.tit{
-    font-size: 16px;
-    font-weight: 400;
-}
-
-.main .multiple ul li div.area p.txt{
-    font-size: 13px;
-    padding: 15px 0 10px 0;
-    line-height: 21px;
-    color: #959595;
-}
-
 .main .multiple ul li div.area p.txt span{
     font-weight: 400;
 }
@@ -65,10 +53,10 @@
 .content .top {
     text-align: center;
     border-bottom: 1px solid #ddd;
+}.content .top h1.tit{
+    font-size: 20px;
 }
-
 .animal_list .mid {
-    background-color: #fafafa;
     overflow: hidden;
 }
 .animal_list .mid .btn_wrap {
@@ -116,8 +104,6 @@
 .animal_list .list_wrap li div.thumb{
     width: 150px;
     padding-bottom: 150px;
-    background-position: center;
-    background-size: cover;
     float: right;
 }
 .animal_list .list_wrap li div.txtBx{
@@ -136,17 +122,39 @@
     height: 60px;
     overflow: hidden;
 }
-.animal_list .list_wrap li div.txtBx p.info{
-    font-size: 12px;
-    color: #666;
+.secondUse div.mid > div {
+    width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
 }
-.animal_list .list_wrap li div.txtBx p.info span{
+.secondUse div.mid ul.list_wrap {
+    width: 900px;
+    float: right;
+}
+.secondUse div.mid ul.list_wrap li {
+    width: calc(33.3333% - 42px);
+    float: left;
+    margin: 10px;
+    padding: 10px;
+    height: 370px;
+    background-color: #fff;
+    border:1px solid #fefefe;
+    border-bottom: 1px solid #ddd;
+}
+.secondUse div.mid ul.list_wrap li div.thumb{
+    width:260px;
+    padding-bottom:260px;
+}
+.secondUse div.mid ul.list_wrap li div.txtBx{
+    padding-top:12px;
+}
+.secondUse div.mid ul.list_wrap li div.txtBx span.state_info{
     display: inline-block;
+    padding-right: 5px;
 }
-.animal_list .list_wrap li div.txtBx p.info span::after{
-    content: '·';
+.secondUse div.mid ul.list_wrap li div.txtBx span.new_ico{
+    font-size: 10px;
+    color: #fe7f9c;
+    display: inline-block;
     padding: 0 5px;
-}
-.animal_list .list_wrap li div.txtBx p.info span:last-child::after{
-    content: '';
 }
