@@ -127,6 +127,10 @@
     margin: 0 auto;
     overflow: hidden;
 }
+.secondUse div.mid div.btn_wrap {
+    width: 900px;
+    float: right;
+}
 .secondUse div.mid ul.list_wrap {
     width: 900px;
     float: right;
@@ -138,7 +142,6 @@
     padding: 10px;
     height: 370px;
     background-color: #fff;
-    border:1px solid #fefefe;
     border-bottom: 1px solid #ddd;
 }
 .secondUse div.mid ul.list_wrap li div.thumb{
