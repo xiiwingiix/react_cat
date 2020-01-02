@@ -14,13 +14,25 @@ class Foster extends Component {
                         <h1 className="tit">임시 보호</h1>
                         <p className="subtxt pb20">잠시나마 우리의 사랑을 나누어 주세요.</p>
                         <p className="btn_wrap roundBtn_wrap">
-                            <span className="on">전체</span>
-                            <span>서울</span>
-                            <span>강원도</span>
-                            <span>충청도</span>
-                            <span>전라도</span>
-                            <span>경상도</span>
-                            <span>제주도</span>
+                          <span className="on">전체</span>
+                          <span>서울</span>
+                          <span>경기</span>
+                          <span>인천</span>
+                          <span>부산</span>
+                          <span>대구</span>
+                          <span>광주</span>
+                          <span>대전</span>
+                          <span>울산</span>
+                          <span>강원</span>
+                          <span>충북</span>
+                          <span>충남</span>
+                          <span>전북</span>
+                          <span>전남</span>
+                          <span>경북</span>
+                          <span>경남</span>
+                          <span>제주</span>
+                          <span>세종</span>
+                          <span>경북</span>
                         </p>
                     </div>
                     <div className="mid">

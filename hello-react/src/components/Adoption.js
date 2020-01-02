@@ -12,6 +12,7 @@ class Adoption extends Component {
                     <p className="btn_wrap roundBtn_wrap">
                         <span className="on">전체</span>
                         <span>서울</span>
+                        <span>경기도</span>
                         <span>강원도</span>
                         <span>충청도</span>
                         <span>전라도</span>

@@ -61,6 +61,9 @@ li {
     color: #fe7f9c;
     border: 1px solid #fe7f9c;
 }
+.roundBtn_wrap span:hover{
+    cursor: pointer;
+}
 /* 스와이프 */
 .swiper-container{
     width: 100%;
