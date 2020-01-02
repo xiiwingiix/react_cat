@@ -19,9 +19,16 @@ class SecondUse extends Component {
                     <div>
                         <div className="btn_wrap">
                             <span className="sort kind">
+                                <strong>CARTEGORY</strong>
                                 <span className="on">전체</span>
-                                <span>강아지</span>
-                                <span>고양이</span>
+                                <span>패션</span>
+                                <span>외출</span>
+                                <span>하우스</span>
+                                <span>키친</span>
+                                <span>푸드</span>
+                                <span>구루밍/위생</span>
+                                <span>장난감</span>
+                                <span>기타</span>
                             </span>
                             <span className="sort state">
                                 <span className="on">진행 중</span>

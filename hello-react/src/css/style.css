@@ -126,13 +126,42 @@
     width: 1000px;
     margin: 0 auto;
     overflow: hidden;
+    position: relative;
 }
 .secondUse div.mid div.btn_wrap {
     width: 900px;
     float: right;
 }
+.secondUse div.mid div.btn_wrap span.sort.kind{
+    position: absolute;
+    top: 55px;
+    left: 0;
+    width: 100px;
+}
+.secondUse div.mid div.btn_wrap span.sort.kind strong{
+    display: inline-block;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #333;
+    margin-bottom: 20px;
+}
+.secondUse div.mid div.btn_wrap span.sort.kind span{
+    display: inline-block;
+    background-color: #eee;
+    width: auto;
+    height: 24px;
+    line-height: 24px;
+    border-radius: 15px;
+    text-align: center;
+    padding: 0 15px;
+    margin-bottom: 10px;
+    font-size: 13px;
+    cursor: pointer;
+}
+.secondUse div.mid div.btn_wrap div.roundBtn_wrap{
+    text-align: right;
+}
 .secondUse div.mid ul.list_wrap {
-    width: 900px;
+    width: 800px;
     float: right;
 }
 .secondUse div.mid ul.list_wrap li {
