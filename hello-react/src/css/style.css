@@ -124,12 +124,13 @@
 }
 .secondUse div.mid > div {
     width: 1000px;
-    margin: 0 auto;
+    margin: 0px auto;
     overflow: hidden;
     position: relative;
+    padding: 20px 0;
 }
 .secondUse div.mid div.btn_wrap {
-    width: 900px;
+    width: 800px;
     float: right;
 }
 .secondUse div.mid div.btn_wrap span.sort.kind{
@@ -157,8 +158,24 @@
     font-size: 13px;
     cursor: pointer;
 }
+.secondUse div.mid div.btn_wrap span.sort.kind span.on{
+    background-color: #ddd;
+}
+.secondUse div.mid div.btn_wrap span.sort.state{
+    float: left;
+    margin-left: 10px;
+}
+.secondUse div.mid div.btn_wrap span.sort.state span{
+    display: inline-block;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.secondUse div.mid div.btn_wrap span.sort.state span.on{
+    text-decoration: underline;
+}
 .secondUse div.mid div.btn_wrap div.roundBtn_wrap{
-    text-align: right;
+    float: right;
+    margin-right: 10px;
 }
 .secondUse div.mid ul.list_wrap {
     width: 800px;
