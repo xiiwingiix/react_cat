@@ -165,8 +165,8 @@
     font-size: 13px;
     cursor: pointer;
 }
-.secondUse div.mid div.btn_wrap span.sort.kind span.on,
-.secondUse div.mid div.btn_wrap span.sort.kind span:hover{
+.product div.mid div.btn_wrap span.sort.kind span.on,
+.product div.mid div.btn_wrap span.sort.kind span:hover{
     background-color: #ddd;
 }
 .product div.mid div.btn_wrap span.sort.state{
@@ -179,23 +179,23 @@
     cursor: pointer;
 }
 
-.secondUse div.mid div.btn_wrap span.sort.state span.on,
-.secondUse div.mid div.btn_wrap span.sort.state span:hover{
+.product div.mid div.btn_wrap span.sort.state span.on,
+.product div.mid div.btn_wrap span.sort.state span:hover{
     text-decoration: underline;
 }
 
-.secondUse div.mid div.btn_wrap div.roundBtn_wrap{
+.product div.mid div.btn_wrap div.roundBtn_wrap{
     float: right;
     margin-right: 10px;
 }
-.secondUse div.mid div.btn_wrap div.roundBtn_wrap span{
+.product div.mid div.btn_wrap div.roundBtn_wrap span{
     cursor: pointer;
 }
-.secondUse div.mid div.btn_wrap div.roundBtn_wrap span:hover{
+.product div.mid div.btn_wrap div.roundBtn_wrap span:hover{
     border: 1px solid #fe7f9c;
     color: #fe7f9c;
 }
-.secondUse div.mid ul.list_wrap {
+.product div.mid ul.list_wrap {
     width: 800px;
     float: right;
 }
@@ -209,7 +209,10 @@
     height: 300px;
     vertical-align: top;
 }
-.secondUse div.mid ul.list_wrap li div.thumb{
+.product.Recommendation div.mid ul.list_wrap li {
+    height: 330px;
+}
+.product div.mid ul.list_wrap li div.thumb{
     width:100%;
     padding-bottom:100%;
 }
@@ -262,4 +265,126 @@
 .Recommendation .info span::after{
     content: '';
     padding:0;
+}
+.Talk .mid {
+    padding:20px 0 50px;
+}
+.Talk .mid .writeBox {
+    width: 1000px; 
+    margin:0 auto;
+    padding: 20px; 
+    background-color: #fff;
+    border:1px solid #ddd;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+.Talk .mid .writeBox *{
+    box-sizing: border-box;
+}
+.Talk .mid .writeBox textarea{
+    width: 1000px; 
+    height: 118px;
+    text-align: center;
+    padding: 10px;
+    border: none;
+}
+.Talk .mid .writeBox input{
+    height: 30px;
+    line-height: 30px;
+    float: right;
+    border-radius: 15px;
+    margin-top: 20px;
+}
+.Talk .mid .writeBox div.file-wrap div{
+    position: relative;
+    width: 38px;
+    height: 38px;
+    float: left;
+    margin-right: 10px;
+}
+.Talk .mid .writeBox div.file-wrap div img{
+    width: 100%;
+    height: 100%;
+}
+
+.Talk .mid .writeBox div.file-wrap div .cover{
+    position: absolute;
+    width: 38px;
+    top: 0;
+    left: 0;
+    height: 38px;
+    line-height: 38px;
+    color: #fff;
+    letter-spacing: -1px;
+    text-align: center;
+    background: #000;
+    opacity: 0.4;
+    filter: alpha(opacity=40);
+    font-size: 12px;
+    cursor: pointer;
+}
+.Talk .mid .writeBox .file-attach .camera {
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    width: 38px;
+    height: 38px;
+    border: 1px solid #959595;
+    cursor: pointer;
+}
+.Talk .mid .writeBox .file-attach .camera input.file-trick{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 38px;
+    height: 38px;
+    cursor: pointer;
+    border: 0 none;
+    background: 0 none;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+.Talk .mid .listBox {
+    width: 1000px;
+    margin: 50px auto;
+}
+.Talk .mid .listBox li {
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+.Talk .mid .listBox li .writer {
+    width: 90px;
+    height: 90px;
+    background-color: #fe7f9c69;
+    text-align: center;
+    line-height: 90px;
+    border-radius: 50%;
+    color: #fff;
+}
+
+.Talk .mid .listBox li .writer + div {
+    width: 890px;
+    background: #fff;
+    padding: 0 20px 15px;
+    margin-left: 20px;
+    box-sizing: border-box;
+    position: relative;
+    min-height: 90px;
+    border: 1px dashed #ddd;
+}
+
+.Talk .mid .listBox li:nth-child(odd) .writer ,
+.Talk .mid .listBox li:nth-child(odd) .writer + div {
+    float: left;
+}
+.Talk .mid .listBox li:nth-child(odd) .writer + div {
+    margin:0 0 0 20px;
+}
+.Talk .mid .listBox li:nth-child(even) .writer ,
+.Talk .mid .listBox li:nth-child(even) .writer + div {
+    float: right;
+}
+.Talk .mid .listBox li:nth-child(even) .writer + div {
+    margin:0 20px 0 0;
+
 }
