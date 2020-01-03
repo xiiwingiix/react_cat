@@ -13,12 +13,27 @@ li {
 .content {
     margin-top: 50px;
 }
+.top {
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+.top h1.tit{
+    font-size: 20px;
+}
 .mid {
     background-color: #fafafa;
 }
 .tit{
     font-size: 16px;
     font-weight: 400;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* 라인수 */
+    -webkit-box-orient: vertical;
+    word-wrap:break-word; 
+    line-height: 1.2em;
+    max-height: 2.4em;
 }
 .txt{
     font-size: 13px;

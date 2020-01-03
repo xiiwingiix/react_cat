@@ -1,9 +1,6 @@
 import React from 'react';
 import Swiper from 'swiper';
 
-import '../css/basic.css';
-import '../css/style.css';
-
 import banner_01 from '../img/banner_01.jpg';
 import banner_02 from '../img/banner_02.png';
 

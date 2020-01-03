@@ -4,7 +4,7 @@ class SecondUse extends Component {
   render(){
     return(
         <Fragment>
-            <section className="secondUse content">
+            <section className="product secondUse content">
                 <div className="top pb30">
                     <h1 className="tit">중고 물품</h1>
                     <p className="subtxt pb20">사용하지 않는 반려 동물 물품 벼룩시장!</p>
