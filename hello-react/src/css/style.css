@@ -4,11 +4,14 @@
 }
 /* multiple slider*/
 .main .multiple {
-    width:100%; 
+    width:100%;
     margin: 0 auto;
 }
+.main .multiple .top {
+    border-bottom: none;
+}
 .main .multiple .main_tit {
-    font-size: 18px; 
+    font-size: 18px;
     text-align: center;
     margin: 100px 0 0;
 }
@@ -28,7 +31,7 @@
 }
 
 .main .multiple .main_tit + .btn_wrap span{
-    display: inline-block; 
+    display: inline-block;
     margin-left: 20px;
 }
 
@@ -126,30 +129,30 @@
     height: 60px;
     overflow: hidden;
 }
-.secondUse div.mid > div {
+.product div.mid > div {
     width: 1000px;
     margin: 0px auto;
     overflow: hidden;
     position: relative;
     padding: 20px 0;
 }
-.secondUse div.mid div.btn_wrap {
+.product div.mid div.btn_wrap {
     width: 800px;
     float: right;
 }
-.secondUse div.mid div.btn_wrap span.sort.kind{
+.product div.mid div.btn_wrap span.sort.kind{
     position: absolute;
     top: 55px;
     left: 0;
     width: 100px;
 }
-.secondUse div.mid div.btn_wrap span.sort.kind strong{
+.product div.mid div.btn_wrap span.sort.kind strong{
     display: inline-block;
     padding-bottom: 10px;
     border-bottom: 1px solid #333;
     margin-bottom: 20px;
 }
-.secondUse div.mid div.btn_wrap span.sort.kind span{
+.product div.mid div.btn_wrap span.sort.kind span{
     display: inline-block;
     background-color: #eee;
     width: auto;
@@ -162,15 +165,15 @@
     font-size: 13px;
     cursor: pointer;
 }
-.secondUse div.mid div.btn_wrap span.sort.kind span.on, 
+.secondUse div.mid div.btn_wrap span.sort.kind span.on,
 .secondUse div.mid div.btn_wrap span.sort.kind span:hover{
     background-color: #ddd;
 }
-.secondUse div.mid div.btn_wrap span.sort.state{
+.product div.mid div.btn_wrap span.sort.state{
     float: left;
     margin-left: 10px;
 }
-.secondUse div.mid div.btn_wrap span.sort.state span{
+.product div.mid div.btn_wrap span.sort.state span{
     display: inline-block;
     margin-right: 10px;
     cursor: pointer;
@@ -196,7 +199,7 @@
     width: 800px;
     float: right;
 }
-.secondUse div.mid ul.list_wrap li {
+.product div.mid ul.list_wrap li {
     width: calc(33.3333% - 42px);
     display: inline-block;
     margin: 10px;
@@ -210,16 +213,53 @@
     width:100%;
     padding-bottom:100%;
 }
-.secondUse div.mid ul.list_wrap li div.txtBx{
+.product div.mid ul.list_wrap li div.txtBx{
     padding-top:12px;
 }
-.secondUse div.mid ul.list_wrap li div.txtBx span.state_info{
+.product div.mid ul.list_wrap li div.txtBx .info span.star_graph{
+    width: 75px;
+    height: 15px;
+    background-image: url(../img/star_back_ico.png);
+    background-size: 15px;
+    display: block;
+    margin-bottom: 5px;
+}
+.product div.mid ul.list_wrap li div.txtBx .info span.star_graph span{
+    width: 88%;
+    height: 15px;
+    background-image: url(../img/star_ico.png);
+    background-size: 15px;
+    display: block;
+}
+.product div.mid ul.list_wrap li div.txtBx .info span.txt{
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    word-wrap:normal;
+    width:calc(100% - 30px);
+    overflow:hidden;
+    padding: 0;
+}
+.product div.mid ul.list_wrap li div.txtBx .info span.ico{
+    cursor: pointer;
+    color: #fe7f9c;
+    opacity: 0.8;
+}
+.product div.mid ul.list_wrap li div.txtBx .info span.ico i{
+    font-size: 20px;
+}
+
+.product div.mid ul.list_wrap li div.txtBx span.state_info{
     display: inline-block;
     padding-right: 5px;
 }
-.secondUse div.mid ul.list_wrap li div.txtBx span.new_ico{
+
+.product div.mid ul.list_wrap li div.txtBx span.new_ico{
     font-size: 10px;
     color: #fe7f9c;
     display: inline-block;
     padding: 0 5px;
+}
+.Recommendation .info span::after{
+    content: '';
+    padding:0;
 }

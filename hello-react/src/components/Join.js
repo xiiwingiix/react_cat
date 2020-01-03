@@ -1,5 +1,4 @@
 import React,{Component, Fragment} from 'react';
-import {NavLink} from 'react-router-dom';
 import '../css/Join.css';
 
 class Join extends Component {
