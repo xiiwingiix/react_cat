@@ -19,7 +19,7 @@ class SecondUse extends Component {
                     <div>
                         <div className="btn_wrap">
                             <span className="sort kind">
-                                <strong>CARTEGORY</strong>
+                                <strong>CATEGORY</strong>
                                 <span className="on">전체</span>
                                 <span>패션</span>
                                 <span>외출</span>

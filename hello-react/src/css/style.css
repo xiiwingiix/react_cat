@@ -49,13 +49,17 @@
     font-weight: 400;
 }
 
-/* animal_list */
 .content .top {
     text-align: center;
     border-bottom: 1px solid #ddd;
-}.content .top h1.tit{
+}
+.content.main  .top {
+    border-bottom: none;
+}
+.content .top h1.tit{
     font-size: 20px;
 }
+
 .animal_list .mid {
     overflow: hidden;
 }
@@ -158,7 +162,8 @@
     font-size: 13px;
     cursor: pointer;
 }
-.secondUse div.mid div.btn_wrap span.sort.kind span.on{
+.secondUse div.mid div.btn_wrap span.sort.kind span.on, 
+.secondUse div.mid div.btn_wrap span.sort.kind span:hover{
     background-color: #ddd;
 }
 .secondUse div.mid div.btn_wrap span.sort.state{
@@ -170,12 +175,22 @@
     margin-right: 10px;
     cursor: pointer;
 }
-.secondUse div.mid div.btn_wrap span.sort.state span.on{
+
+.secondUse div.mid div.btn_wrap span.sort.state span.on,
+.secondUse div.mid div.btn_wrap span.sort.state span:hover{
     text-decoration: underline;
 }
+
 .secondUse div.mid div.btn_wrap div.roundBtn_wrap{
     float: right;
     margin-right: 10px;
+}
+.secondUse div.mid div.btn_wrap div.roundBtn_wrap span{
+    cursor: pointer;
+}
+.secondUse div.mid div.btn_wrap div.roundBtn_wrap span:hover{
+    border: 1px solid #fe7f9c;
+    color: #fe7f9c;
 }
 .secondUse div.mid ul.list_wrap {
     width: 800px;
@@ -183,16 +198,17 @@
 }
 .secondUse div.mid ul.list_wrap li {
     width: calc(33.3333% - 42px);
-    float: left;
+    display: inline-block;
     margin: 10px;
-    padding: 10px;
-    height: 370px;
+    padding: 10px 10px 30px;
     background-color: #fff;
     border-bottom: 1px solid #ddd;
+    height: 300px;
+    vertical-align: top;
 }
 .secondUse div.mid ul.list_wrap li div.thumb{
-    width:260px;
-    padding-bottom:260px;
+    width:100%;
+    padding-bottom:100%;
 }
 .secondUse div.mid ul.list_wrap li div.txtBx{
     padding-top:12px;
