@@ -2,6 +2,7 @@ body {
     font-family: 'Noto Sans KR', sans-serif;
     font-weight: 300;
     color:#333;
+    box-sizing: border-box;
 }
 ul, p{
     padding : 0;
@@ -13,12 +14,27 @@ li {
 .content {
     margin-top: 50px;
 }
+.top {
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+.top h1.tit{
+    font-size: 20px;
+}
 .mid {
     background-color: #fafafa;
 }
 .tit{
     font-size: 16px;
     font-weight: 400;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* 라인수 */
+    -webkit-box-orient: vertical;
+    word-wrap:break-word; 
+    line-height: 1.2em;
+    max-height: 2.4em;
 }
 .txt{
     font-size: 13px;
@@ -44,10 +60,22 @@ li {
     background-size: cover;
     background-position: center;
 }
-.pb10 {padding-bottom: 10px;}.pb20 {padding-bottom: 20px;}.pb30 {padding-bottom: 30px;}
-.mb20 {margin-bottom:20px;}
+.pb10 {
+    padding-bottom: 10px;
+}
+.pb20 {
+    padding-bottom: 20px;
+}
+.pb30 {
+    padding-bottom: 30px;
+}
+.mb20 {
+    margin-bottom:20px;
+}
+
 /* 둥근 버튼 */
-.roundBtn_wrap span{
+.roundBtn_wrap > span,
+.roundBtn_wrap > input.btn{
     display: inline-block;
     font-size: 13px;
     padding: 0 10px ;
@@ -56,8 +84,11 @@ li {
     border: 1px solid #959595;
     border-radius: 10px;
     margin-right: 5px;
+    cursor: pointer;
 }
-.roundBtn_wrap span.on{
+.roundBtn_wrap > span.on,
+.roundBtn_wrap > span:hover,
+.roundBtn_wrap > input.btn:hover{
     color: #fe7f9c;
     border: 1px solid #fe7f9c;
 }

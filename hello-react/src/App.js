@@ -1,8 +1,9 @@
 import React,{Component, Fragment} from 'react';
 import {BrowserRouter as Router,Route,Switch} from 'react-router-dom'
 
-import logo from './logo.svg';
 import './App.css';
+import './css/basic.css';
+import './css/style.css';
 
 import Gnb from './components/Gnb.js'
 import Main from './components/Main.js'

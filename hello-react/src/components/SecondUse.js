@@ -1,11 +1,10 @@
 import React,{Component, Fragment} from 'react';
-import {NavLink} from 'react-router-dom';
 
 class SecondUse extends Component {
   render(){
     return(
         <Fragment>
-            <section className="secondUse content">
+            <section className="product secondUse content">
                 <div className="top pb30">
                     <h1 className="tit">중고 물품</h1>
                     <p className="subtxt pb20">사용하지 않는 반려 동물 물품 벼룩시장!</p>
@@ -19,9 +18,16 @@ class SecondUse extends Component {
                     <div>
                         <div className="btn_wrap">
                             <span className="sort kind">
+                                <strong>CATEGORY</strong>
                                 <span className="on">전체</span>
-                                <span>강아지</span>
-                                <span>고양이</span>
+                                <span>패션</span>
+                                <span>외출</span>
+                                <span>하우스</span>
+                                <span>키친</span>
+                                <span>푸드</span>
+                                <span>구루밍/위생</span>
+                                <span>장난감</span>
+                                <span>기타</span>
                             </span>
                             <span className="sort state">
                                 <span className="on">진행 중</span>
