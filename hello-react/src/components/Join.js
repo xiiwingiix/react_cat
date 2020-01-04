@@ -1,8 +1,21 @@
 import React,{Component, Fragment} from 'react';
-import {NavLink} from 'react-router-dom';
 import '../css/Join.css';
 
 class Join extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      financialGoal: ''
+    }
+  }
+  
+  handleChange(evt) {
+    const financialGoal = (evt.target.validity.valid) ? evt.target.value : this.state.financialGoal;
+    
+    this.setState({ financialGoal });
+  }
+  
   render(){
     return(
       <Fragment>
@@ -37,8 +50,9 @@ class Join extends Component {
                 <td className="must">*</td>
                 <td className="td_left">생년월일</td>
                 <td className="td_right">
-                <select name="byear" id="byear" className="c_birth01">
-                  <option selected="selected" value="">선택</option>
+
+                <select name="byear" id="byear" className="c_birth01" defaultValue={'DEFAULT'}>
+                  <option value="DEFAULT">선택</option>
                   <option value="1957">1957년</option>
                   <option value="1958">1958년</option>
                   <option value="1959">1959년</option>
@@ -103,23 +117,25 @@ class Join extends Component {
                   <option value="2018">2018년</option>
                   <option value="2019">2019년</option>
                 </select>
-                <select name="bmonth" id="bmonth" className="c_birth02">
-                  <option selected="selected" value="">선택</option>
+
+                <select name="bmonth" id="bmonth" className="c_birth02" defaultValue={'DEFAULT'}>
+                  <option value="DEFAULT">선택</option>
                   <option value="1">1월</option>
-                  <option value="2">2월</option
-                  ><option value="3">3월</option>
+                  <option value="2">2월</option>
+                  <option value="3">3월</option>
                   <option value="4">4월</option>
                   <option value="5">5월</option>
                   <option value="6">6월</option>
-                  <option value="7">7월</option
-                  ><option value="8">8월</option>
+                  <option value="7">7월</option>
+                  <option value="8">8월</option>
                   <option value="9">9월</option>
                   <option value="10">10월</option>
                   <option value="11">11월</option>
                   <option value="12">12월</option>
                 </select>
-                <select name="bday" id="bday" className="c_birth03">
-                  <option selected="selected" value="">선택</option>
+
+                <select name="bday" id="bday" className="c_birth03" defaultValue={'DEFAULT'}>
+                  <option value="DEFAULT">선택</option>
                   <option value="1">1일</option>
                   <option value="2">2일</option>
                   <option value="3">3일</option>
@@ -158,9 +174,9 @@ class Join extends Component {
                 <td className="must">*</td>
                 <td className="td_left">휴대폰</td>
                 <td className="td_right">
-                  <input type="tel" name="tel1" id="tel1" onKeyup="this.value=this.value.replace(/[^0-9]/g,'');"></input>-
-                  <input type="text" name="tel2" id="tel2" onKeyup="this.value=this.value.replace(/[^0-9]/g,'');"></input>-
-                  <input type="text" name="tel3" id="tel3" onKeyup="this.value=this.value.replace(/[^0-9]/g,'');"></input>
+                  <input type="text" name="tel1" id="tel1" pattern="[0-9]*" onInput={this.handleChange.bind(this)} value={this.state.financialGoal} onChange={event => this.setState({financialGoal: event.target.value.replace(/\D/,'')})}></input>-
+                  <input type="text" name="tel2" id="tel2" pattern="[0-9]*" onInput={this.handleChange.bind(this)} value={this.state.financialGoal} onChange={event => this.setState({financialGoal: event.target.value.replace(/\D/,'')})}></input>-
+                  <input type="text" name="tel3" id="tel3" pattern="[0-9]*" onInput={this.handleChange.bind(this)} value={this.state.financialGoal} onChange={event => this.setState({financialGoal: event.target.value.replace(/\D/,'')})}></input>
                 </td>
               </tr>
               <tr>
@@ -172,11 +188,12 @@ class Join extends Component {
                 <td className="must">*</td>
                 <td className="td_left">메일주소</td>
                 <td className="td_right">
-                  <input name="email1" id="email1" type="text" maxLength="50" value="" size="12" className="email01"></input>
-                  <span className="bl_a"></span>
-                  <input type="text" name="email3" id="email3" className="email02" maxLength="50" value=""></input>
-                  <select name="email2" id="email2" className="email03" onChange="isEmpty('consultForm01',this)">
-                    <option value="etc">직접입력</option>
+
+                  <input name="email1" id="email1" type="text" maxLength="50" className="email01"></input>
+                  <span className="bl_a">@</span>
+                  <input type="text" name="email3" id="email3" className="email02" maxLength="50" ></input>
+                  <select name="email2" id="email2" className="email03" defaultValue={'DEFAULT'}>
+                    <option value="DEFAULT">직접입력</option>
                     <option value="naver.com">naver.com</option>
                     <option value="nate.com">nate.com</option>
                     <option value="daum.net">daum.net</option>
