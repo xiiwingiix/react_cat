@@ -278,6 +278,13 @@
     overflow: hidden;
     box-sizing: border-box;
 }
+.Talk .mid .writeBox + .subtxt {
+    width: 1000px;
+    margin: 0 auto;
+    font-size: 12px;
+    margin-top: 10px;
+    color: #999;
+}
 .Talk .mid .writeBox *{
     box-sizing: border-box;
 }
@@ -287,8 +294,9 @@
     text-align: center;
     padding: 10px;
     border: none;
+    outline: none;
 }
-.Talk .mid .writeBox input{
+.Talk .mid .writeBox input.btn{
     height: 30px;
     line-height: 30px;
     float: right;
@@ -331,6 +339,9 @@
     height: 38px;
     border: 1px solid #959595;
     cursor: pointer;
+    background-image: url(../img/camera_ico.png);
+    background-size: contain;
+    background-position: center;;
 }
 .Talk .mid .writeBox .file-attach .camera input.file-trick{
     position: absolute;
@@ -343,6 +354,7 @@
     background: 0 none;
     opacity: 0;
     filter: alpha(opacity=0);
+
 }
 .Talk .mid .listBox {
     width: 1000px;
@@ -363,28 +375,110 @@
 }
 
 .Talk .mid .listBox li .writer + div {
-    width: 890px;
+    width: auto;
+    max-width: 890px;
     background: #fff;
-    padding: 0 20px 15px;
-    margin-left: 20px;
     box-sizing: border-box;
     position: relative;
     min-height: 90px;
-    border: 1px dashed #ddd;
+    border: 1px solid #ddd;
+}
+.Talk .mid .listBox li .writer + div > *{
+    padding: 5px 20px
+}
+.Talk .mid .listBox li .writer + div > div:first-child{
+    padding-top: 20px;
 }
 
-.Talk .mid .listBox li:nth-child(odd) .writer ,
-.Talk .mid .listBox li:nth-child(odd) .writer + div {
+.Talk .mid .listBox li:nth-child(odd) .writer {
     float: left;
+}
+.Talk .mid .listBox li:nth-child(even) .writer {
+    float: right; 
 }
 .Talk .mid .listBox li:nth-child(odd) .writer + div {
     margin:0 0 0 20px;
-}
-.Talk .mid .listBox li:nth-child(even) .writer ,
-.Talk .mid .listBox li:nth-child(even) .writer + div {
-    float: right;
+    float: left;
 }
 .Talk .mid .listBox li:nth-child(even) .writer + div {
     margin:0 20px 0 0;
+    float: right;
+}
+.Talk .mid .listBox li:nth-child(odd) .writer + div::before{
+    border: 15px solid #ddd;
+    left: -26px;
+}
+.Talk .mid .listBox li:nth-child(even) .writer + div::before{
+    border: 15px solid #ddd;
+    right: -26px;
+}
+.Talk .mid .listBox li:nth-child(odd) .writer + div::after{
+    border: 15px solid #fff;
+    left: -25px;
+}
+.Talk .mid .listBox li:nth-child(even) .writer + div::after{
+    border: 15px solid #fff;
+    right: -25px;
+}
 
+.Talk .mid .listBox li:nth-child(odd) .writer + div::before,
+.Talk .mid .listBox li:nth-child(odd) .writer + div::after{
+    content: '';
+    position: absolute;
+    top: 25px;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid transparent;
+}
+.Talk .mid .listBox li:nth-child(even) .writer + div::before,
+.Talk .mid .listBox li:nth-child(even) .writer + div::after{
+    content: '';
+    position: absolute;
+    top: 25px;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid transparent;
+}
+.Talk .mid .listBox li .writer + div .txt .btn_more{
+    display: inline-block;
+    margin-left: 10px;
+    color: #bbb;
+}
+.Talk .mid .listBox li .writer + div .info i{
+    font-size: 15px;
+    cursor: pointer;
+}
+.Talk .mid .listBox li .writer + div .swiper-container{
+    min-width: 300px;
+}
+.Talk .mid .listBox li .writer + div .comment{
+    font-size: 12px;
+}
+.Talk .mid .listBox li .writer + div .comment strong{
+    display: inline-block;
+    margin-right: 10px;
+}
+.Talk .mid .listBox li .writer + div .comment_input{
+    border-top:1px dashed #ddd;
+    padding: 10px 20px;
+}
+.Talk .mid .listBox li .writer + div .comment_input textarea{
+    border-top: 1px solid #ddd;
+    padding: 0;
+    border: none;
+    outline: none;
+    resize: none;
+    width: calc(100% - 50px);
+    height: 18px;
+    max-height: 80px;
+    line-height: 18px;
+    color: #959595;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.Talk .mid .listBox li .writer + div .comment_input button{
+    border: none;
+    background-color: transparent;
+    color: #fe7f9c;
+    font-weight: bold;
+    float: right;
 }

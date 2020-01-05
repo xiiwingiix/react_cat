@@ -32,7 +32,7 @@ class Talktalk extends Component {
                     </div>
                     <div className="mid">
                         <div className="writeBox roundBtn_wrap">
-                            <textarea name="contents" title="반려동물의 재미난 일상 이야기를 공유해주세요."  readOnly="" defaultValue="로그인 후 글을 남길 수 있습니다."></textarea>
+                            <textarea name="contents" title="반려동물의 재미난 일상 이야기를 공유해주세요."  readOnly="" placeholder="로그인 후 글을 남길 수 있습니다."></textarea>
                             <input type="submit" value="입력하기" className="btn"/>
                             <div className="file-wrap">
                                 <div className="btn-file-del">
@@ -55,21 +55,47 @@ class Talktalk extends Component {
                                 </div>
                             </div>
                         </div>
+                        <div className="subtxt">&#62; 통신예절에 어긋나는 글이나 상업적인 글, 타 사이트에 관련된 글 또는 도용한 글은 관리자에 의해 사전 통보 없이 삭제될 수 있습니다.</div>
                         <div className="listBox">
                             <ul>
                                 <li>
                                     <div className="writer">이젠웃자</div>
                                     <div>
-                                        <div className="txt">따뜻한건 귀신같이 아는 냥이들<br/>따뜻한걸 확실히 좋아하긴하네요 찬바닥엔 거의앉지않고 수건이라도 떨어뜨려서 깔고 앉드라구요;;ㅎ</div>
+                                        <div className="txt">따뜻한건 귀신같이 아는 냥이들<br/>따뜻한걸 확실히 좋아하긴하네요 찬바닥엔 거의앉지않고 수건이라도 떨어뜨려서 깔고 앉드라구요;;<span className="btn_more">더보기</span></div>                                        
                                         <div className="swiper-container">
                                             <div className="swiper-wrapper">
+                                                <div className="swiper-slide">
+                                                    <img alt="" src={sample_01}/>
+                                                </div>
+                                                <div className="swiper-slide">
+                                                    <img alt="" src={sample_02}/>
+                                                </div>
+                                                <div className="swiper-slide">
+                                                    <img alt="" src={sample_03}/>
+                                                </div>
+                                                <div className="swiper-slide">
+                                                    <img alt="" src={sample_01}/>
+                                                </div>
+                                                <div className="swiper-slide">
+                                                    <img alt="" src={sample_02}/>
+                                                </div>
                                             </div>
+                                        </div>
+                                        <p className="info">
+                                            <span className="ico"><i className="material-icons">favorite_border</i></span>
+                                        </p>
+                                        <div className="comment">
+                                            <p><strong>뽀삐언니</strong><span>진짜 귀엽네요! 사진 많이 올려주세요!</span></p>
+                                        </div>
+                                        <div className="comment_input">
+                                            <textarea name="contents" readOnly="" placeholder="댓글 입력"></textarea>
+                                            <button className="btn_submit">게시</button>
                                         </div>
                                     </div>
                                 </li>
                                 <li>
                                     <div className="writer">뷰리누나</div>
-                                    <div>
+                                    <div className="txtBox">
                                         <div className="txt">따뜻한건 귀신같이 아는 냥이들<br/>따뜻한걸 확실히 좋아하긴하네요 찬바닥엔 거의앉지않고 수건이라도 떨어뜨려서 깔고 앉드라구요;;ㅎ</div>
                                         <div className="swiper-container">
                                             <div className="swiper-wrapper">
@@ -82,6 +108,22 @@ class Talktalk extends Component {
                                                 <div className="swiper-slide">
                                                     <img alt="" src={sample_03}/>
                                                 </div>
+                                                <div className="swiper-slide">
+                                                    <img alt="" src={sample_01}/>
+                                                </div>
+                                                <div className="swiper-slide">
+                                                    <img alt="" src={sample_02}/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div className="writer">뷰리누나</div>
+                                    <div className="txtBox">
+                                        <div className="txt">따뜻한건 귀신같이 아는 냥이들따뜻한걸 확실히 좋아하긴하네요 찬바닥엔 거의앉지않고 수건이라도 떨어뜨려서 깔고 앉드라구요;;ㅎ</div>
+                                        <div className="swiper-container">
+                                            <div className="swiper-wrapper">
                                                 <div className="swiper-slide">
                                                     <img alt="" src={sample_01}/>
                                                 </div>
