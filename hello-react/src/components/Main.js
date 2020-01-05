@@ -1,8 +1,8 @@
 import React from 'react';
 import Swiper from 'swiper';
 
-import banner_01 from '../img/banner_01.jpg';
-import banner_02 from '../img/banner_02.png';
+import banner_06 from '../img/banner_06.jpg';
+import banner_02 from '../img/banner_02.jpg';
 
 class Main extends React.Component {
     componentDidMount(){
@@ -40,7 +40,7 @@ class Main extends React.Component {
                 <div className="main content">
                     <div className="swiper-container Main_banner">
                         <ul className="swiper-wrapper">
-                            <li className="swiper-slide"><img src={banner_01} alt="배너이미지"/></li>
+                            <li className="swiper-slide"><img src={banner_06} alt="배너이미지"/></li>
                             <li className="swiper-slide"><img src={banner_02} alt="배너이미지"/></li>
                         </ul>
                         {/* Add Pagination */}
