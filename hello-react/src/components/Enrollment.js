@@ -3,7 +3,11 @@ import React,{Component, Fragment} from 'react';
 class Enrollment extends Component {
     render(){
         return(
-            <Fragment></Fragment>
+            <Fragment>
+                <div className="pop"> 
+                    
+                </div>
+            </Fragment>
         )
     }
 }
