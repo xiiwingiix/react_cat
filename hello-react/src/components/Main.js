@@ -3,6 +3,7 @@ import Swiper from 'swiper';
 
 import banner_06 from '../img/banner_06.jpg';
 import banner_02 from '../img/banner_02.jpg';
+import Enrollment from './Enrollment';
 
 class Main extends React.Component {
     componentDidMount(){
@@ -167,6 +168,7 @@ class Main extends React.Component {
                         <div className="swiper-button-prev"></div>
                     </div>
               </div>
+              <Enrollment/>
             </React.Fragment>
         )
     }
