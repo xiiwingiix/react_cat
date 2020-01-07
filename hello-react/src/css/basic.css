@@ -24,6 +24,14 @@ li {
 .mid {
     background-color: #fafafa;
 }
+.center{
+    position: fixed;
+    top: 50%; 
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0) scale(1.0, 1.0);
+    -webkit-transform: translate3d(-50%,-50%,0) scale(1.0, 1.0);
+    -webkit-font-smoothing: subpixel-antialiased;
+}
 .tit{
     font-size: 16px;
     font-weight: 400;

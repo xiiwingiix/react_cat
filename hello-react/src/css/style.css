@@ -1,8 +1,7 @@
-/* main slider */
+/* main */
 .main .Main_banner {
     margin-top: 50px;
 }
-/* multiple slider*/
 .main .multiple {
     width:100%;
     margin: 0 auto;
@@ -51,7 +50,85 @@
 .main .multiple ul li div.area p.txt span{
     font-weight: 400;
 }
+/* main_pop up */
+.animal_Enrollment {
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
 
+.animal_Enrollment .pop_wrap{
+    width: 50%;
+    max-width: 600px;
+    min-width: 300px;
+    height: 70%;
+    max-height: 800px;
+    background-color: #fff;
+    background-color: white;
+    border: 2px solid #000;
+    box-sizing: border-box;
+}
+.animal_Enrollment .pop_wrap .top{
+    background-size: cover;
+    background-position: center;
+    width: calc(100% - 18px);
+    height: 300px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    padding: 30px;
+    box-sizing: border-box;
+}
+.animal_Enrollment .pop_wrap .top::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: .3;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+.animal_Enrollment .pop_wrap .top .tag{
+    background-color: #fe7f9cc7;
+    color: #fff;
+    font-size: 10px;
+    display: inline-block;
+    padding: 2px 10px;
+    font-weight: lighter;
+    margin-top: 30px;
+}
+.animal_Enrollment .pop_wrap .top .tag + .tit{
+    margin: 20px 0 20px;
+    color:#fff;
+    font-weight: 400;
+    font-size: 20px;
+}
+.animal_Enrollment .pop_wrap .top .tag + .tit + .roundBtn_wrap span{
+    color:#fff;
+    border-color: #fff;
+}
+.animal_Enrollment .pop_wrap .mid{
+    height: 100%;
+    background-color: transparent;
+    overflow: auto;
+}
+.animal_Enrollment .pop_wrap .mid > div{
+    margin-top: 300px;
+    background-color: #fff;
+    padding: 30px;
+}
+.animal_Enrollment .pop_wrap .mid > div .txt{
+    font-size: 15px;
+    color:#333;
+}
+/* top */
 .content .top {
     text-align: center;
     border-bottom: 1px solid #ddd;
@@ -63,6 +140,7 @@
     font-size: 20px;
 }
 
+/* mid : 임보, 입양 */
 .animal_list .mid {
     overflow: hidden;
 }
@@ -129,6 +207,8 @@
     height: 60px;
     overflow: hidden;
 }
+
+/* mid : 중고상품, 추천상품 */
 .product div.mid > div {
     width: 1000px;
     margin: 0px auto;
@@ -266,6 +346,8 @@
     content: '';
     padding:0;
 }
+
+/* mid : 스토리 톡톡 */
 .Talk .mid {
     padding:20px 0 50px;
 }
