@@ -51,17 +51,17 @@
     font-weight: 400;
 }
 /* main_pop up */
-.animal_Enrollment {
+.AnimalDetails {
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.7);
+    /* background: rgba(0,0,0,0.7); */
     position: fixed;
     top: 0;
     left: 0;
     z-index: 10;
 }
 
-.animal_Enrollment .pop_wrap{
+.AnimalDetails .pop_wrap{
     width: 50%;
     max-width: 600px;
     min-width: 300px;
@@ -72,7 +72,7 @@
     border: 2px solid #000;
     box-sizing: border-box;
 }
-.animal_Enrollment .pop_wrap .top{
+.AnimalDetails .pop_wrap .top{
     background-size: cover;
     background-position: center;
     width: calc(100% - 18px);
@@ -84,7 +84,7 @@
     padding: 30px;
     box-sizing: border-box;
 }
-.animal_Enrollment .pop_wrap .top::after{
+.AnimalDetails .pop_wrap .top::after{
     content: '';
     width: 100%;
     height: 100%;
@@ -95,7 +95,7 @@
     left: 0;
     z-index: -1;
 }
-.animal_Enrollment .pop_wrap .top .tag{
+.AnimalDetails .pop_wrap .top .tag{
     background-color: #fe7f9cc7;
     color: #fff;
     font-size: 10px;
@@ -104,29 +104,87 @@
     font-weight: lighter;
     margin-top: 30px;
 }
-.animal_Enrollment .pop_wrap .top .tag + .tit{
+.AnimalDetails .pop_wrap .top .tag + .tit{
     margin: 20px 0 20px;
     color:#fff;
     font-weight: 400;
     font-size: 20px;
 }
-.animal_Enrollment .pop_wrap .top .tag + .tit + .roundBtn_wrap span{
+.AnimalDetails .pop_wrap .top .tag + .tit + .roundBtn_wrap span{
     color:#fff;
     border-color: #fff;
 }
-.animal_Enrollment .pop_wrap .mid{
+.AnimalDetails .pop_wrap .mid{
     height: 100%;
     background-color: transparent;
     overflow: auto;
 }
-.animal_Enrollment .pop_wrap .mid > div{
+.AnimalDetails .pop_wrap .mid > div{
     margin-top: 300px;
     background-color: #fff;
     padding: 30px;
 }
-.animal_Enrollment .pop_wrap .mid > div .txt{
+.AnimalDetails .pop_wrap .mid > div table{
+    width:100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+    border-top: 3px solid #fe7f9c42;
+    border-bottom: 1px solid #e8e8e8;
+    margin-bottom: 50px;
     font-size: 15px;
-    color:#333;
+}
+.AnimalDetails .pop_wrap .mid > div table tr{
+    text-align: center;
+}
+.AnimalDetails .pop_wrap .mid > div table th{
+    background-color: #f9f9f9;
+    color:#999;
+    font-weight: normal;
+    padding: 5px 0;
+
+}
+.AnimalDetails .pop_wrap .mid > div table td{
+    padding: 5px 0;
+    color: #222;
+}
+.AnimalDetails .pop_wrap .mid > div .gallery-top {
+    margin-bottom: 20px;
+}
+.AnimalDetails .pop_wrap .mid > div .gallery-top .swiper-slide{
+    width:100%;
+    padding-bottom: 100%;
+    background-size: cover;
+    background-position: center;
+}
+.AnimalDetails .pop_wrap .mid > div .gallery-thumbs .swiper-slide{
+    width: 20%;
+    padding-bottom: 25%;
+    background-size: cover;
+    background-position: center;
+}
+.AnimalDetails .pop_wrap .mid > div .gallery-thumbs .swiper-slide-thumb-active{
+    border:1px solid #fe7f9c;
+    box-sizing: border-box;
+}
+.AnimalDetails .pop_wrap .mid > div .txt{
+    font-size: 15px;
+    border-top: 1px dashed #ddd;
+    border-bottom: 1px dashed #ddd;
+    margin-top: 50px;
+    padding: 20px 0;
+    color: #222;
+    line-height: 1.6;
+    margin-bottom: 50px;
+}
+.AnimalDetails .pop_wrap .mid > div .txt + div{
+    font-size: 13px;
+    line-height: 1.6;
+}
+.AnimalDetails .pop_wrap .mid > div .txt + div ol {
+    padding: 0 0 0 20px;
+}
+.AnimalDetails .pop_wrap .mid > div .txt + div ol li{
+    list-style: decimal;
 }
 /* top */
 .content .top {

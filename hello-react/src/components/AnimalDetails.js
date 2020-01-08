@@ -2,16 +2,14 @@ import React,{Component, Fragment} from 'react';
 import Swiper from 'swiper';
 
 
-class Enrollment extends Component {
+class AnimalDetails extends Component {
     componentDidMount(){
         var galleryThumbs = new Swiper('.gallery-thumbs', {
             spaceBetween: 10,
-            slidesPerView: 4,
-            freeMode: true,
-            loopedSlides: 5, //looped slides should be the same
-            watchSlidesVisibility: true,
-            watchSlidesProgress: true,
-            
+            slidesPerView: 'auto',
+            loopedSlides: 5,
+            loop:true,
+            slidesPerView: 'auto',
         });
         new Swiper('.gallery-top', {
             spaceBetween: 10,
@@ -25,11 +23,13 @@ class Enrollment extends Component {
                 swiper: galleryThumbs,
             },
         });
+
     }
+
     render(){
         return(
             <Fragment>
-                <div className="pop animal_Enrollment"> 
+                <div className="pop AnimalDetails"> 
                     <div className="pop_wrap center">
                         <article className="top" style={{"backgroundImage":"url(https://i.pinimg.com/564x/95/05/2b/95052bdee0cec3b0a0294b063394752c.jpg)"}}>
                             <div className="tag">임보 구함</div>
@@ -53,34 +53,37 @@ class Enrollment extends Component {
                                         <col width="20%"/>
                                         <col width="30%" />
                                     </colgroup>
-                                    <tr>
-                                        <th>지역</th><td>경기도 안양시</td>
-                                        <th>연락처</th><td>010-1234-1234</td>
-                                    </tr>
-                                    <tr>
-                                        <th>분류</th><td>한국고양이</td>
-                                    </tr>
-                                    <tr>
-                                        <th>성별</th><td>남아</td>
-                                        <th>나이</th><td>6개월</td>
-                                    </tr>
-                                    <tr>
-                                        <th>중성화</th><td>완료</td>
-                                        <th>예방접종</th><td>완료</td>
-                                    </tr>
+                                    <tbody>
+                                        <tr>
+                                            <th>지역</th><td>경기도 안양시</td>
+                                            <th>연락처</th><td>010-1234-1234</td>
+                                        </tr>
+                                        <tr>
+                                            <th>분류</th><td colSpan='3'>한국고양이</td>
+                                        </tr>
+                                        <tr>
+                                            <th>성별</th><td>남아</td>
+                                            <th>나이</th><td>6개월</td>
+                                        </tr>
+                                        <tr>
+                                            <th>중성화</th><td>완료</td>
+                                            <th>예방접종</th><td>완료</td>
+                                        </tr>
+                                    </tbody>
+
 
                                 </table>    
                                 <section>
                                     <div className="swiper-container gallery-top">
                                         <div className="swiper-wrapper">
-                                            <div className="swiper-slide"><img src="https://i.pinimg.com/564x/ba/f4/4c/baf44ce74e8458729116c5e69ae2c48c.jpg"/></div>
-                                            <div className="swiper-slide"><img src="https://i.pinimg.com/564x/95/05/2b/95052bdee0cec3b0a0294b063394752c.jpg"/></div>
-                                            <div className="swiper-slide"><img src="https://i.pinimg.com/564x/3b/57/b7/3b57b7c031dabb1b233f25b1bcadfb60.jpg"/></div>
-                                            <div className="swiper-slide"><img src="https://i.pinimg.com/564x/26/c9/a7/26c9a7986008a87226f92b73fcf3fdcb.jpg"/></div>
-                                            <div className="swiper-slide"><img src="https://i.pinimg.com/564x/ba/f4/4c/baf44ce74e8458729116c5e69ae2c48c.jpg"/></div>
-                                            <div className="swiper-slide"><img src="https://i.pinimg.com/564x/95/05/2b/95052bdee0cec3b0a0294b063394752c.jpg"/></div>
-                                            <div className="swiper-slide"><img src="https://i.pinimg.com/564x/3b/57/b7/3b57b7c031dabb1b233f25b1bcadfb60.jpg"/></div>
-                                            <div className="swiper-slide"><img src="https://i.pinimg.com/564x/26/c9/a7/26c9a7986008a87226f92b73fcf3fdcb.jpg"/></div>
+                                            <div className="swiper-slide" style={{"backgroundImage":"url(https://i.pinimg.com/564x/ba/f4/4c/baf44ce74e8458729116c5e69ae2c48c.jpg)"}}></div>
+                                            <div className="swiper-slide" style={{"backgroundImage":"url(https://i.pinimg.com/564x/95/05/2b/95052bdee0cec3b0a0294b063394752c.jpg)"}}></div>
+                                            <div className="swiper-slide" style={{"backgroundImage":"url(https://i.pinimg.com/564x/3b/57/b7/3b57b7c031dabb1b233f25b1bcadfb60.jpg)"}}></div>
+                                            <div className="swiper-slide" style={{"backgroundImage":"url(https://i.pinimg.com/564x/26/c9/a7/26c9a7986008a87226f92b73fcf3fdcb.jpg)"}}></div>
+                                            <div className="swiper-slide" style={{"backgroundImage":"url(https://i.pinimg.com/564x/ba/f4/4c/baf44ce74e8458729116c5e69ae2c48c.jpg)"}}></div>
+                                            <div className="swiper-slide" style={{"backgroundImage":"url(https://i.pinimg.com/564x/95/05/2b/95052bdee0cec3b0a0294b063394752c.jpg)"}}></div>
+                                            <div className="swiper-slide" style={{"backgroundImage":"url(https://i.pinimg.com/564x/3b/57/b7/3b57b7c031dabb1b233f25b1bcadfb60.jpg)"}}></div>
+                                            <div className="swiper-slide" style={{"backgroundImage":"url(https://i.pinimg.com/564x/26/c9/a7/26c9a7986008a87226f92b73fcf3fdcb.jpg)"}}></div>
 
                                         </div>
                                         <div className="swiper-button-next swiper-button-white"></div>
@@ -88,14 +91,14 @@ class Enrollment extends Component {
                                     </div>
                                     <div className="swiper-container gallery-thumbs">
                                         <div className="swiper-wrapper">
-                                            <div className="swiper-slide"><img src="https://i.pinimg.com/564x/ba/f4/4c/baf44ce74e8458729116c5e69ae2c48c.jpg"/></div>
-                                            <div className="swiper-slide"><img src="https://i.pinimg.com/564x/95/05/2b/95052bdee0cec3b0a0294b063394752c.jpg"/></div>
-                                            <div className="swiper-slide"><img src="https://i.pinimg.com/564x/3b/57/b7/3b57b7c031dabb1b233f25b1bcadfb60.jpg"/></div>
-                                            <div className="swiper-slide"><img src="https://i.pinimg.com/564x/26/c9/a7/26c9a7986008a87226f92b73fcf3fdcb.jpg"/></div>
-                                            <div className="swiper-slide"><img src="https://i.pinimg.com/564x/ba/f4/4c/baf44ce74e8458729116c5e69ae2c48c.jpg"/></div>
-                                            <div className="swiper-slide"><img src="https://i.pinimg.com/564x/95/05/2b/95052bdee0cec3b0a0294b063394752c.jpg"/></div>
-                                            <div className="swiper-slide"><img src="https://i.pinimg.com/564x/3b/57/b7/3b57b7c031dabb1b233f25b1bcadfb60.jpg"/></div>
-                                            <div className="swiper-slide"><img src="https://i.pinimg.com/564x/26/c9/a7/26c9a7986008a87226f92b73fcf3fdcb.jpg"/></div>
+                                            <div className="swiper-slide" style={{"backgroundImage":"url(https://i.pinimg.com/564x/ba/f4/4c/baf44ce74e8458729116c5e69ae2c48c.jpg)"}}></div>
+                                            <div className="swiper-slide" style={{"backgroundImage":"url(https://i.pinimg.com/564x/95/05/2b/95052bdee0cec3b0a0294b063394752c.jpg)"}}></div>
+                                            <div className="swiper-slide" style={{"backgroundImage":"url(https://i.pinimg.com/564x/3b/57/b7/3b57b7c031dabb1b233f25b1bcadfb60.jpg)"}}></div>
+                                            <div className="swiper-slide" style={{"backgroundImage":"url(https://i.pinimg.com/564x/26/c9/a7/26c9a7986008a87226f92b73fcf3fdcb.jpg)"}}></div>
+                                            <div className="swiper-slide" style={{"backgroundImage":"url(https://i.pinimg.com/564x/ba/f4/4c/baf44ce74e8458729116c5e69ae2c48c.jpg)"}}></div>
+                                            <div className="swiper-slide" style={{"backgroundImage":"url(https://i.pinimg.com/564x/95/05/2b/95052bdee0cec3b0a0294b063394752c.jpg)"}}></div>
+                                            <div className="swiper-slide" style={{"backgroundImage":"url(https://i.pinimg.com/564x/3b/57/b7/3b57b7c031dabb1b233f25b1bcadfb60.jpg)"}}></div>
+                                            <div className="swiper-slide" style={{"backgroundImage":"url(https://i.pinimg.com/564x/26/c9/a7/26c9a7986008a87226f92b73fcf3fdcb.jpg)"}}></div>
                                         </div>
                                     </div>
                                 </section>
@@ -161,4 +164,4 @@ class Enrollment extends Component {
     }
 }
 
-export default Enrollment;
+export default AnimalDetails;
