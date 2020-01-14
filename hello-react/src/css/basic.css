@@ -34,24 +34,27 @@ li {
 	width: 100%;
 	height: 100%;
 }
-.outer > div.inner{
+.outer div.inner{
 	display: table-cell;
 	vertical-align: middle;
 	text-align: center;
 }
-.outer > div.inner > div.centered{
+.outer div.inner div.centered{
 	display: inline-block;
 }
-
-.center{
-    position: fixed;
-    top: 50%; 
-    left: 50%;
-    transform: translate3d(-50%, -50%, 0) scale(1.0, 1.0);
-    -webkit-transform: translate3d(-50%,-50%,0) scale(1.0, 1.0);
-    -webkit-font-smoothing: subpixel-antialiased;
+.outer div.inner div.centered button.close_btn {
+    position: absolute;
+    right: -2px;
+    top: -40px;
+    background: #000;
+    font-size: 30px;
+    color: #fff;
+    z-index: 10;
+    outline: none;
+    border: none;
+    width: 40px;
+    height: 40px;
 }
-
 .tit{
     font-size: 16px;
     font-weight: 400;
@@ -88,18 +91,10 @@ li {
     background-size: cover;
     background-position: center;
 }
-.pb10 {
-    padding-bottom: 10px;
-}
-.pb20 {
-    padding-bottom: 20px;
-}
-.pb30 {
-    padding-bottom: 30px;
-}
-.mb20 {
-    margin-bottom:20px;
-}
+.pb10 {padding-bottom: 10px;}
+.pb20 {padding-bottom: 20px;}
+.pb30 {padding-bottom: 30px;}
+.mb20 {margin-bottom: 20px;}
 
 /* 둥근 버튼 */
 .roundBtn_wrap > span,

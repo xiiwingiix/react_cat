@@ -10,7 +10,8 @@ class Main extends Component {
 		super(props)
 		this.state = {
 			showPopup : false
-		}
+        }
+        this.togglePopup = this.togglePopup.bind(this);
 	}
 	togglePopup(e) {
 		this.setState({

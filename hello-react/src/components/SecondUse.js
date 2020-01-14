@@ -1,5 +1,4 @@
 import React,{Component, Fragment} from 'react';
-import Masonry from 'react-masonry'
 
 class SecondUse extends Component {
 	componentDidMount(){

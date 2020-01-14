@@ -8,7 +8,6 @@ class AnimalDetails extends Component {
 			spaceBetween: 10,
 			slidesPerView: 'auto',
 			loopedSlides: 5,
-			loop:true,
 		});
 		new Swiper('.gallery-top', {
 			spaceBetween: 10,
@@ -28,10 +27,11 @@ class AnimalDetails extends Component {
     render(){
         return(
             <Fragment>
-                <div className="pop AnimalDetails" onClick={this.props.closePopup}> 
+                <div className="pop AnimalDetails" > 
 					<div className="outer">
 						<div className="inner">
 							<div className="centered pop_wrap">
+								<button className="close_btn"onClick={this.props.closePopup}>&times;</button>
 								<article className="top" style={{"backgroundImage":"url(https://i.pinimg.com/564x/95/05/2b/95052bdee0cec3b0a0294b063394752c.jpg)"}}>
 									<div className="tag">임보 구함</div>
 									<div className="tit">개인사정으로 인해 분양하게 되었습니다. 아가는 착해요</div>

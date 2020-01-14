@@ -1,5 +1,6 @@
 import React,{Component, Fragment} from 'react';
-import AnimalDetails from './AnimalDetails.js'
+import AnimalDetails from './AnimalDetails.js';
+import BoardWrite from './BoardWrite.js';
 
 import '../css/basic.css';
 import '../css/style.css';
@@ -102,7 +103,7 @@ class Foster extends Component {
                         </ul>
                     </div>
 					{this.state.showPopup ? <AnimalDetails closePopup={this.togglePopup.bind(this)}/>: null}
-
+                    <BoardWrite/>
                 </section>
             </Fragment>
         )

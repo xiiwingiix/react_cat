@@ -51,7 +51,7 @@
     font-weight: 400;
 }
 /* main_pop up */
-.AnimalDetails {
+.pop {
     width: 100%;
     height: 100%;
     background: rgba(0,0,0,0.6);
@@ -61,7 +61,8 @@
     z-index: 10;
 }
 
-.AnimalDetails .pop_wrap {
+.AnimalDetails .pop_wrap,
+.BoardWrite .pop_wrap {
     width: 50%;
     max-width: 1000px;
     min-width: 500px;
@@ -71,10 +72,11 @@
     border: 2px solid #000;
     box-sizing: border-box;
     position: relative;
-    overflow: auto;
     margin: 0 auto;
-	min-height: 500px;
+    min-height: 500px;
+    text-align: left;
 }
+
 .AnimalDetails .pop_wrap .top{
     background-size: cover;
     background-position: center;
