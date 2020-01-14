@@ -24,6 +24,34 @@ li {
 .mid {
     background-color: #fafafa;
 }
+
+.outer{ 
+	position: absolute;
+	z-index: 1;
+	display: table;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.outer > div.inner{
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+.outer > div.inner > div.centered{
+	display: inline-block;
+}
+
+.center{
+    position: fixed;
+    top: 50%; 
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0) scale(1.0, 1.0);
+    -webkit-transform: translate3d(-50%,-50%,0) scale(1.0, 1.0);
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
 .tit{
     font-size: 16px;
     font-weight: 400;

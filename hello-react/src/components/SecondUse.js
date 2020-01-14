@@ -1,6 +1,10 @@
 import React,{Component, Fragment} from 'react';
+import Masonry from 'react-masonry'
 
 class SecondUse extends Component {
+	componentDidMount(){
+
+	}
   render(){
     return(
         <Fragment>
@@ -38,7 +42,7 @@ class SecondUse extends Component {
                             </div>
                         </div>
 
-                        <ul className="list_wrap">
+                        <ul className="list_wrap grid">
                             <li state="on">
                                 <div className="thumb" style={{'backgroundImage':'url("https://cafeptthumb-phinf.pstatic.net/MjAxOTEyMTVfMjc5/MDAxNTc2Mzg5Mzk3NDM3.hXqLsP_aIM8JpCnX18tg_iS2eRkrWLbv241WkK6VkdIg.EDIxRqu4IhIDPc3ELHhfX7Kt-TbD_UOcruqCuSZJKegg.JPEG/20191215_144928.jpg?type=w740")'}}></div>  
                                 <div className="txtBx">
