@@ -61,19 +61,19 @@
     z-index: 10;
 }
 
-.AnimalDetails .pop_wrap{
+.AnimalDetails .pop_wrap {
     width: 50%;
     max-width: 1000px;
     min-width: 500px;
     height: 70%;
     max-height: 800px;
     background-color: #fff;
-    background-color: white;
     border: 2px solid #000;
-	box-sizing: border-box;
-	position: relative;
-	overflow: auto;
-	margin: 0 auto;
+    box-sizing: border-box;
+    position: relative;
+    overflow: auto;
+    margin: 0 auto;
+	min-height: 500px;
 }
 .AnimalDetails .pop_wrap .top{
     background-size: cover;
