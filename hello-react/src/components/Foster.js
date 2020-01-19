@@ -11,17 +11,25 @@ class Foster extends Component {
 	constructor(props){
 		super(props)
 		this.state = {
-			showPopup : false
+            showPopup_details : false,
+			showPopup_write : false
 		}
 	}
-	togglePopup(e) {
+	togglePopup_details(e) {
 		this.setState({
-			showPopup: !this.state.showPopup
+			showPopup_details: !this.state.showPopup_details
+		});
+
+		return false;
+    }
+    
+	togglePopup_write(e) {
+		this.setState({
+			showPopup_write: !this.state.showPopup_write
 		});
 
 		return false;
 	}
-
     render(){
         return(
             <Fragment>
@@ -50,12 +58,12 @@ class Foster extends Component {
                                 <span>완료</span>
                             </span>
                             <div className="roundBtn_wrap">
-                                <span>등록하기</span>
+                                <span onClick={this.togglePopup_write.bind(this)}>등록하기</span>
                             </div>
                         </div>
 
                         <ul className="list_wrap">
-                            <li state="on" onClick={this.togglePopup.bind(this)}>
+                            <li state="on" onClick={this.togglePopup_details.bind(this)}>
                                 <div className="thumb" style={{"backgroundImage":"url(https://www.catjoa.com/dog_sale/photo_free/201912/1577725900_26588400.jpg)"}}></div>  
                                 <div className="txtBx">
                                     <p className="tit pb10">임보 보호자를 찾아요</p>
@@ -70,7 +78,7 @@ class Foster extends Component {
                                     </p>
                                 </div>
                             </li>
-                            <li state="off" onClick={this.togglePopup.bind(this)}>
+                            <li state="off" onClick={this.togglePopup_details.bind(this)}>
                                 <div className="thumb" style={{"backgroundImage":"url(https://www.catjoa.com/dog_sale/photo_free/202001/1577847202_42135700.jpg)"}}></div>  
                                 <div className="txtBx">
                                     <p className="tit pb10">임보 보호자를 찾아요</p>
@@ -85,7 +93,7 @@ class Foster extends Component {
                                     </p>
                                 </div>
                             </li>
-                            <li state="on" onClick={this.togglePopup.bind(this)}>
+                            <li state="on" onClick={this.togglePopup_details.bind(this)}>
                                 <div className="thumb" style={{"backgroundImage":"url(https://www.catjoa.com/dog_sale/photo_free/202001/1577845030_59707000.gif)"}}></div>  
                                 <div className="txtBx">
                                     <p className="tit pb10">임보 보호자를 찾아요</p>
@@ -102,8 +110,9 @@ class Foster extends Component {
                             </li>
                         </ul>
                     </div>
-					{this.state.showPopup ? <AnimalDetails closePopup={this.togglePopup.bind(this)}/>: null}
-                    <BoardWrite/>
+					{this.state.showPopup_details ? <AnimalDetails closePopup={this.togglePopup_details.bind(this)}/>: null}
+					{this.state.showPopup_write ? <BoardWrite closePopup={this.togglePopup_write.bind(this)}/>: null}
+
                 </section>
             </Fragment>
         )

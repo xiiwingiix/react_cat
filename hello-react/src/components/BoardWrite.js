@@ -67,27 +67,86 @@ class BoardWrite extends Component {
 					<div className="outer">
 						<div className="inner">
 							<div className="centered pop_wrap">
-                                <button className="close_btn">&times;</button>
-                                <dl>
-                                    <dt>지역</dt>
-                                    <dd>
-                                        <select name="city" title="시/도선택" className="select" onChange={this.onChangeSelectCity} defaultValue ={this.state.selectedCity}>{cityOption}</select>
-                                    </dd>
-                                    <dt>지역 상세</dt>
-                                    <dd>
-										<select name="country" title="시/군/구선택" className="select">{countryOption}</select>
-                                    </dd>
-									<dt>동물선택</dt>
-									<dd>
-										<button onClick = {(e) => this.onChangeSelectKind('dog')}>개</button>
-										<button onClick = {(e) => this.onChangeSelectKind('cat')}>고양이</button>
-										<button onClick = {(e) => this.onChangeSelectKind('etc')}>기타</button>
-									</dd>
-									<dt>품종</dt>
-									<dd>
-										<select name="kind">{kindOption}</select>
-									</dd>
-                                </dl>
+                                <button className="close_btn" onClick={this.props.closePopup}>&times;</button>
+								<div>
+									<ul>
+										<li>
+											<div className = 'tit'>지역</div>
+											<div className="subtxt">
+												<select name="city" title="시/도선택" className="select width2 " onChange={this.onChangeSelectCity} defaultValue ={this.state.selectedCity}>{cityOption}</select>
+												<select name="country" title="시/군/구선택" className="select width2 ">{countryOption}</select>
+											</div>
+										</li>
+										<li>
+											<div className="tit">동물선택</div>
+											<div className="subtxt">
+												<button className="width4 on" onClick = {(e) => this.onChangeSelectKind('dog')}>개</button>
+												<button className="width4" onClick = {(e) => this.onChangeSelectKind('cat')}>고양이</button>
+												<button className="width4" onClick = {(e) => this.onChangeSelectKind('etc')}>기타</button>
+											</div>
+											<div className="tit">품종</div>
+											<div className="subtxt">
+												<select className="width1" name="kind">{kindOption}</select>
+											</div>
+									
+											<div className="tit">성별</div>
+											<div className="subtxt">
+												<button className="width4 on">남</button>
+												<button className="width4">여</button>
+											</div>
+									
+											<div className="tit">중성화</div>
+											<div className="subtxt">
+												<button className="width4 on">예</button>
+												<button className="width4">아니오</button>
+											</div>
+									
+											<div className="tit">나이</div>
+											<div className="subtxt">
+												<button className="btn_cnt minus">-</button>
+												<input className="width4 input_cnt" type="text"/>
+												<button className="btn_cnt plus">+</button>
+											</div>
+									
+											<div className="tit">예방접종</div>
+											<div className="subtxt">
+												<button className="width4 on">예</button ><button className="width4">아니오</button><br/>
+												<input className="width2 mt10" type="text"/>
+												<button className="btn_subOpt ">삭제</button><button className="btn_subOpt">추가</button>
+											</div>
+										</li>
+										<li>
+											<div className="tit">사유</div>
+											<div className="subtxt">
+												<textarea className="width1"></textarea>
+											</div>
+										</li>
+										<li>
+											<div className="tit">연락처</div>
+											<div className="subtxt">
+												<input className="width2" type="text"/><br/>
+											<input className="width2 mt10" type="text" placeholder="숫자코드 4자리 입력"/><button>인증번호 요청</button>
+											</div>
+										</li>
+										<li>
+											<div className="tit">이미지</div>
+											<div className="subtxt">
+												<ul>
+													<li></li>
+													<li></li>
+													<li></li>
+													<li></li>
+													<li></li>
+													<li></li>
+												</ul>
+											</div>
+										</li>
+									</ul>
+									<div className="bottom">
+										<button className="btn_cancel">취소</button>
+										<button className="btn_ok">등록 완료</button>
+									</div>
+								</div>
                             </div>
                         </div>
                     </div>
