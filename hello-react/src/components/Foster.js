@@ -6,13 +6,13 @@ import '../css/basic.css';
 import '../css/style.css';
 
 
-
 class Foster extends Component {
 	constructor(props){
 		super(props)
 		this.state = {
             showPopup_details : false,
-			showPopup_write : false
+            showPopup_write : false,
+            area_active : '전체'
 		}
 	}
 	togglePopup_details(e) {
@@ -38,13 +38,23 @@ class Foster extends Component {
                         <h1 className="tit">임시 보호</h1>
                         <p className="subtxt pb20">잠시나마 우리의 사랑을 나누어 주세요.</p>
                         <p className="btn_wrap roundBtn_wrap">
-                            <span className="on">전체</span>
-                            <span>서울</span>
-                            <span>강원도</span>
-                            <span>충청도</span>
-                            <span>전라도</span>
-                            <span>경상도</span>
-                            <span>제주도</span>
+                            <span className={this.state.area_active === '전체' ? 'on' : '' }>전체</span>
+                            <span className={this.state.area_active === '서울' ? 'on' : '' }>서울</span>
+                            <span className={this.state.area_active === '경기' ? 'on' : '' }>경기</span>
+                            <span className={this.state.area_active === '인천' ? 'on' : '' }>인천</span>
+                            <span className={this.state.area_active === '부산' ? 'on' : '' }>부산</span>
+                            <span className={this.state.area_active === '대구' ? 'on' : '' }>대구</span>
+                            <span className={this.state.area_active === '광주' ? 'on' : '' }>광주</span>
+                            <span className={this.state.area_active === '대전' ? 'on' : '' }>대전</span>
+                            <span className={this.state.area_active === '울산' ? 'on' : '' }>울산</span>
+                            <span className={this.state.area_active === '강원' ? 'on' : '' }>강원</span>
+                            <span className={this.state.area_active === '충북' ? 'on' : '' }>충북</span>
+                            <span className={this.state.area_active === '충남' ? 'on' : '' }>충남</span>
+                            <span className={this.state.area_active === '전북' ? 'on' : '' }>전북</span>
+                            <span className={this.state.area_active === '전남' ? 'on' : '' }>전남</span>
+                            <span className={this.state.area_active === '경북' ? 'on' : '' }>경북</span>
+                            <span className={this.state.area_active === '경남' ? 'on' : '' }>경남</span>
+                            <span className={this.state.area_active === '제주' ? 'on' : '' }>제주</span>
                         </p>
                     </div>
                     <div className="mid">
@@ -110,7 +120,10 @@ class Foster extends Component {
                             </li>
                         </ul>
                     </div>
+                    {/* 상세보기 팝업*/}
 					{this.state.showPopup_details ? <AnimalDetails closePopup={this.togglePopup_details.bind(this)}/>: null}
+
+                    {/* 등록하기 팝업*/}
 					{this.state.showPopup_write ? <BoardWrite closePopup={this.togglePopup_write.bind(this)}/>: null}
 
                 </section>

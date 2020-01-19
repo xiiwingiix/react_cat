@@ -59,7 +59,7 @@ class BoardWrite extends Component {
 		const kindOption = kindArray.kind.map(
 			(addr, index) => <option value = {addr} key = {index}>{addr}</option>
 		)
-		console.log('선택된 도시 :'+this.state.selectedCity+'   선택된 동물:'+this.state.selectedKind);
+		// console.log('선택된 도시 :'+this.state.selectedCity+'   선택된 동물:'+this.state.selectedKind);
 
     	return(
         	<Fragment>
