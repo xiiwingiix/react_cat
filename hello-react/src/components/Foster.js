@@ -13,6 +13,7 @@ class Foster extends Component {
             showPopup_details : false,
             showPopup_write : false,
             area_active : '전체'
+            
 		}
 	}
 	togglePopup_details(e) {
@@ -29,7 +30,13 @@ class Foster extends Component {
 		});
 
 		return false;
-	}
+    }
+    
+    onChangeArea(Area){
+        this.setState({
+            area_active : Area
+        })
+    }
     render(){
         return(
             <Fragment>
@@ -38,23 +45,23 @@ class Foster extends Component {
                         <h1 className="tit">임시 보호</h1>
                         <p className="subtxt pb20">잠시나마 우리의 사랑을 나누어 주세요.</p>
                         <p className="btn_wrap roundBtn_wrap">
-                            <span className={this.state.area_active === '전체' ? 'on' : '' }>전체</span>
-                            <span className={this.state.area_active === '서울' ? 'on' : '' }>서울</span>
-                            <span className={this.state.area_active === '경기' ? 'on' : '' }>경기</span>
-                            <span className={this.state.area_active === '인천' ? 'on' : '' }>인천</span>
-                            <span className={this.state.area_active === '부산' ? 'on' : '' }>부산</span>
-                            <span className={this.state.area_active === '대구' ? 'on' : '' }>대구</span>
-                            <span className={this.state.area_active === '광주' ? 'on' : '' }>광주</span>
-                            <span className={this.state.area_active === '대전' ? 'on' : '' }>대전</span>
-                            <span className={this.state.area_active === '울산' ? 'on' : '' }>울산</span>
-                            <span className={this.state.area_active === '강원' ? 'on' : '' }>강원</span>
-                            <span className={this.state.area_active === '충북' ? 'on' : '' }>충북</span>
-                            <span className={this.state.area_active === '충남' ? 'on' : '' }>충남</span>
-                            <span className={this.state.area_active === '전북' ? 'on' : '' }>전북</span>
-                            <span className={this.state.area_active === '전남' ? 'on' : '' }>전남</span>
-                            <span className={this.state.area_active === '경북' ? 'on' : '' }>경북</span>
-                            <span className={this.state.area_active === '경남' ? 'on' : '' }>경남</span>
-                            <span className={this.state.area_active === '제주' ? 'on' : '' }>제주</span>
+                            <span className={this.state.area_active === '전체' ? 'on' : '' } onClick = {(e) => this.onChangeArea('전체')}>전체</span>
+                            <span className={this.state.area_active === '서울' ? 'on' : '' } onClick = {(e) => this.onChangeArea('서울')}>서울</span>
+                            <span className={this.state.area_active === '경기' ? 'on' : '' } onClick = {(e) => this.onChangeArea('경기')}>경기</span>
+                            <span className={this.state.area_active === '인천' ? 'on' : '' } onClick = {(e) => this.onChangeArea('인천')}>인천</span>
+                            <span className={this.state.area_active === '부산' ? 'on' : '' } onClick = {(e) => this.onChangeArea('부산')}>부산</span>
+                            <span className={this.state.area_active === '대구' ? 'on' : '' } onClick = {(e) => this.onChangeArea('대구')}>대구</span>
+                            <span className={this.state.area_active === '광주' ? 'on' : '' } onClick = {(e) => this.onChangeArea('광주')}>광주</span>
+                            <span className={this.state.area_active === '대전' ? 'on' : '' } onClick = {(e) => this.onChangeArea('대전')}>대전</span>
+                            <span className={this.state.area_active === '울산' ? 'on' : '' } onClick = {(e) => this.onChangeArea('울산')}>울산</span>
+                            <span className={this.state.area_active === '강원' ? 'on' : '' } onClick = {(e) => this.onChangeArea('강원')}>강원</span>
+                            <span className={this.state.area_active === '충북' ? 'on' : '' } onClick = {(e) => this.onChangeArea('충북')}>충북</span>
+                            <span className={this.state.area_active === '충남' ? 'on' : '' } onClick = {(e) => this.onChangeArea('충남')}>충남</span>
+                            <span className={this.state.area_active === '전북' ? 'on' : '' } onClick = {(e) => this.onChangeArea('전북')}>전북</span>
+                            <span className={this.state.area_active === '전남' ? 'on' : '' } onClick = {(e) => this.onChangeArea('전남')}>전남</span>
+                            <span className={this.state.area_active === '경북' ? 'on' : '' } onClick = {(e) => this.onChangeArea('경북')}>경북</span>
+                            <span className={this.state.area_active === '경남' ? 'on' : '' } onClick = {(e) => this.onChangeArea('경남')}>경남</span>
+                            <span className={this.state.area_active === '제주' ? 'on' : '' } onClick = {(e) => this.onChangeArea('제주')}>제주</span>
                         </p>
                     </div>
                     <div className="mid">
