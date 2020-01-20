@@ -39,26 +39,29 @@ class BoardWrite extends Component {
 		this.setState({selectedCity : e.target.value});
 	}
 	// 동물 종류 변경
-	onChangeSelectKind = (kind) => {
-		this.setState({selectedKind : kind});
+	onChangeSelectKind = (e) => {
+		this.setState({selectedKind : e.target.value});
+
 	}
 
 	render(){
 		// 시/도 옵션
-		const cityOption = this.state.address_opt.map(
-			(addr, index) => <option value = {addr.city} key = {index}>{addr.city}</option>
+		const cityOption = this.state.address_opt.map((addr, index) =>
+			<option value = {addr.city} key = {index}>{addr.city}</option>
 		)
 
 		// 시/군/구 옵션
-		const countryArray = this.state.address_opt.find(addr => addr.city === this.state.selectedCity);
-		const countryOption = countryArray.country.map(
-			(addr, index) => <option value = {addr} key = {index}>{addr}</option>
+		const countryArray = this.state.address_opt.find(addr => 
+			addr.city === this.state.selectedCity
+		);
+		const countryOption = countryArray.country.map((addr, index) => 
+			<option value = {addr} key = {index}>{addr}</option>
 		)
 
 		// 품종 옵션
 		const kindArray = this.state.kind.find(addr => addr.classify === this.state.selectedKind);
-		const kindOption = kindArray.kind.map(
-			(addr, index) => <option value = {addr} key = {index}>{addr}</option>
+		const kindOption = kindArray.kind.map((addr, index) => 
+			<option value = {addr} key = {index}>{addr}</option>
 		)
 		
 		// console.log('선택된 도시 :'+this.state.selectedCity+'   선택된 동물:'+this.state.selectedKind);
@@ -73,7 +76,7 @@ class BoardWrite extends Component {
 								<div>
 									<ul>
 										<li>
-											<div className = 'tit'>지역</div>
+											<div className='tit'>지역</div>
 											<div className="subtxt">
 												<select name="city" title="시/도선택" className="select width2 " onChange={this.onChangeSelectCity} defaultValue ={this.state.selectedCity}>{cityOption}</select>
 												<select name="country" title="시/군/구선택" className="select width2 ">{countryOption}</select>
@@ -82,9 +85,9 @@ class BoardWrite extends Component {
 										<li>
 											<div className="tit">동물선택</div>
 											<div className="subtxt">
-												<button className="width4 on" onClick = {(e) => this.onChangeSelectKind('dog')}>개</button>
-												<button className="width4" onClick = {(e) => this.onChangeSelectKind('cat')}>고양이</button>
-												<button className="width4" onClick = {(e) => this.onChangeSelectKind('etc')}>기타</button>
+												<button className={'width4 '+ (this.state.selectedKind === 'dog' ? 'on':'')} onClick = {this.onChangeSelectKind} value = 'dog'>강아지</button>
+												<button className={'width4 '+ (this.state.selectedKind === 'cat' ? 'on':'')} onClick = {this.onChangeSelectKind} value = 'cat'>고양이</button>
+												<button className={'width4 '+ (this.state.selectedKind === 'etc' ? 'on':'')} onClick = {this.onChangeSelectKind} value = 'etc'>기타</button>
 											</div>
 											<div className="tit">품종</div>
 											<div className="subtxt">
