@@ -6,22 +6,37 @@ import '../css/basic.css';
 import '../css/style.css';
 
 
-
 class Foster extends Component {
 	constructor(props){
 		super(props)
 		this.state = {
-			showPopup : false
+            showPopup_details : false,
+            showPopup_write : false,
+            area_active : '전체'
+            
 		}
 	}
-	togglePopup(e) {
+	togglePopup_details(e) {
 		this.setState({
-			showPopup: !this.state.showPopup
+			showPopup_details: !this.state.showPopup_details
 		});
 
 		return false;
-	}
+    }
+    
+	togglePopup_write(e) {
+		this.setState({
+			showPopup_write: !this.state.showPopup_write
+		});
 
+		return false;
+    }
+    
+    onChangeArea(Area){
+        this.setState({
+            area_active : Area
+        })
+    }
     render(){
         return(
             <Fragment>
@@ -30,13 +45,23 @@ class Foster extends Component {
                         <h1 className="tit">임시 보호</h1>
                         <p className="subtxt pb20">잠시나마 우리의 사랑을 나누어 주세요.</p>
                         <p className="btn_wrap roundBtn_wrap">
-                            <span className="on">전체</span>
-                            <span>서울</span>
-                            <span>강원도</span>
-                            <span>충청도</span>
-                            <span>전라도</span>
-                            <span>경상도</span>
-                            <span>제주도</span>
+                            <span className={this.state.area_active === '전체' ? 'on' : '' } onClick = {(e) => this.onChangeArea('전체')}>전체</span>
+                            <span className={this.state.area_active === '서울' ? 'on' : '' } onClick = {(e) => this.onChangeArea('서울')}>서울</span>
+                            <span className={this.state.area_active === '경기' ? 'on' : '' } onClick = {(e) => this.onChangeArea('경기')}>경기</span>
+                            <span className={this.state.area_active === '인천' ? 'on' : '' } onClick = {(e) => this.onChangeArea('인천')}>인천</span>
+                            <span className={this.state.area_active === '부산' ? 'on' : '' } onClick = {(e) => this.onChangeArea('부산')}>부산</span>
+                            <span className={this.state.area_active === '대구' ? 'on' : '' } onClick = {(e) => this.onChangeArea('대구')}>대구</span>
+                            <span className={this.state.area_active === '광주' ? 'on' : '' } onClick = {(e) => this.onChangeArea('광주')}>광주</span>
+                            <span className={this.state.area_active === '대전' ? 'on' : '' } onClick = {(e) => this.onChangeArea('대전')}>대전</span>
+                            <span className={this.state.area_active === '울산' ? 'on' : '' } onClick = {(e) => this.onChangeArea('울산')}>울산</span>
+                            <span className={this.state.area_active === '강원' ? 'on' : '' } onClick = {(e) => this.onChangeArea('강원')}>강원</span>
+                            <span className={this.state.area_active === '충북' ? 'on' : '' } onClick = {(e) => this.onChangeArea('충북')}>충북</span>
+                            <span className={this.state.area_active === '충남' ? 'on' : '' } onClick = {(e) => this.onChangeArea('충남')}>충남</span>
+                            <span className={this.state.area_active === '전북' ? 'on' : '' } onClick = {(e) => this.onChangeArea('전북')}>전북</span>
+                            <span className={this.state.area_active === '전남' ? 'on' : '' } onClick = {(e) => this.onChangeArea('전남')}>전남</span>
+                            <span className={this.state.area_active === '경북' ? 'on' : '' } onClick = {(e) => this.onChangeArea('경북')}>경북</span>
+                            <span className={this.state.area_active === '경남' ? 'on' : '' } onClick = {(e) => this.onChangeArea('경남')}>경남</span>
+                            <span className={this.state.area_active === '제주' ? 'on' : '' } onClick = {(e) => this.onChangeArea('제주')}>제주</span>
                         </p>
                     </div>
                     <div className="mid">
@@ -50,12 +75,12 @@ class Foster extends Component {
                                 <span>완료</span>
                             </span>
                             <div className="roundBtn_wrap">
-                                <span>등록하기</span>
+                                <span onClick={this.togglePopup_write.bind(this)}>등록하기</span>
                             </div>
                         </div>
 
                         <ul className="list_wrap">
-                            <li state="on" onClick={this.togglePopup.bind(this)}>
+                            <li state="on" onClick={this.togglePopup_details.bind(this)}>
                                 <div className="thumb" style={{"backgroundImage":"url(https://www.catjoa.com/dog_sale/photo_free/201912/1577725900_26588400.jpg)"}}></div>  
                                 <div className="txtBx">
                                     <p className="tit pb10">임보 보호자를 찾아요</p>
@@ -70,7 +95,7 @@ class Foster extends Component {
                                     </p>
                                 </div>
                             </li>
-                            <li state="off" onClick={this.togglePopup.bind(this)}>
+                            <li state="off" onClick={this.togglePopup_details.bind(this)}>
                                 <div className="thumb" style={{"backgroundImage":"url(https://www.catjoa.com/dog_sale/photo_free/202001/1577847202_42135700.jpg)"}}></div>  
                                 <div className="txtBx">
                                     <p className="tit pb10">임보 보호자를 찾아요</p>
@@ -85,7 +110,7 @@ class Foster extends Component {
                                     </p>
                                 </div>
                             </li>
-                            <li state="on" onClick={this.togglePopup.bind(this)}>
+                            <li state="on" onClick={this.togglePopup_details.bind(this)}>
                                 <div className="thumb" style={{"backgroundImage":"url(https://www.catjoa.com/dog_sale/photo_free/202001/1577845030_59707000.gif)"}}></div>  
                                 <div className="txtBx">
                                     <p className="tit pb10">임보 보호자를 찾아요</p>
@@ -102,8 +127,12 @@ class Foster extends Component {
                             </li>
                         </ul>
                     </div>
-					{this.state.showPopup ? <AnimalDetails closePopup={this.togglePopup.bind(this)}/>: null}
-                    <BoardWrite/>
+                    {/* 상세보기 팝업*/}
+					{this.state.showPopup_details ? <AnimalDetails closePopup={this.togglePopup_details.bind(this)}/>: null}
+
+                    {/* 등록하기 팝업*/}
+					{this.state.showPopup_write ? <BoardWrite closePopup={this.togglePopup_write.bind(this)}/>: null}
+
                 </section>
             </Fragment>
         )

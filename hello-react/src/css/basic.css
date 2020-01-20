@@ -11,6 +11,18 @@ ul, p{
 li {
     list-style : none;
 }
+
+.width1 {width:calc(100% - 5px);}
+.width2 {width:calc(50% - 5px); margin-right: 5px; }
+.width3 {width:calc(33.3333% - 5px); margin-right: 5px;}
+.width4 {width:calc(25% - 5px); margin-right: 5px;}
+.width5 {width:calc(20% - 5px); margin-right: 5px;}
+.width10 {width:calc(10% - 5px); margin-right: 5px;}
+.pb10 {padding-bottom: 10px;}.pb20 {padding-bottom: 20px;}.pb30 {padding-bottom: 30px;}
+.mt10 {margin-top:10px;}
+.mb20 {margin-bottom: 20px;}
+.none {display: none;}.block{display: block;}.inline {display: inline;}.inline-block{display: inline-block;}
+
 .content {
     margin-top: 50px;
 }
@@ -40,7 +52,8 @@ li {
 	text-align: center;
 }
 .outer div.inner div.centered{
-	display: inline-block;
+    display: inline-block;
+    vertical-align: middle;
 }
 .outer div.inner div.centered button.close_btn {
     position: absolute;
@@ -91,11 +104,21 @@ li {
     background-size: cover;
     background-position: center;
 }
-.pb10 {padding-bottom: 10px;}
-.pb20 {padding-bottom: 20px;}
-.pb30 {padding-bottom: 30px;}
-.mb20 {margin-bottom: 20px;}
-
+.btn_cancel {
+    border:1px solid #fe7f9c;
+    color: #fe7f9c;
+    background-color: #fff;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+.btn_ok {
+    border:1px solid #fe7f9c;
+    background-color: #fe7f9c;
+    color:#fff;
+    padding: 5px 10px;
+    margin-left: 5px;
+    cursor: pointer;
+}
 /* 둥근 버튼 */
 .roundBtn_wrap > span,
 .roundBtn_wrap > input.btn{
