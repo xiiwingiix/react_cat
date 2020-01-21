@@ -1,55 +1,134 @@
 import React,{Component, Fragment} from 'react';
 import AnimalDetails from './AnimalDetails.js'
-
+import BoardWrite from './BoardWrite.js';
 
 class Adoption extends Component {
 	constructor(props){
-		super(props)
+		super(props);
+		this.onClickSortKind = this.onClickSortKind.bind(this);
 		this.state = {
-			showPopup : false
+			showPopup_details : false,
+			showPopup_write : false,
+			area_active : '전체',
+			areaArr: [
+				{ value: "전체", name: "전체" },
+				{ value: "서울", name: "서울" },
+				{ value: "경기", name: "경기" },
+				{ value: "인천", name: "인천" },
+				{ value: "부산", name: "부산" },
+				{ value: "대구", name: "대구" },
+				{ value: "광주", name: "광주" },
+				{ value: "대전", name: "대전" },
+				{ value: "울산", name: "울산" },
+				{ value: "강원", name: "강원" },
+				{ value: "충북", name: "충북" },
+				{ value: "충남", name: "충남" },
+				{ value: "전북", name: "전북" },
+				{ value: "전남", name: "전남" },
+				{ value: "경북", name: "경북" },
+				{ value: "경남", name: "경남" },
+				{ value: "제주", name: "제주" }
+			],
+			sort_kind : 'dog',
+			kindArr :[
+				{value : 'dog', name : '강아지'},
+				{value : 'cat', name : '고양이'},
+				{value : 'etc', name : '기타'},
+				{value : 'all', name : '전체'}
+			],
+			sort_state : 'isGoing',
+			stateArr :[
+				{value : 'isGoing', name : '진행중'},
+				{value : 'done', name : '완료'},
+				{value : 'all', name : '전체'}
+			]
 		}
 	}
-	togglePopup(e) {
+	
+	//팝업 상세보기
+	togglePopup_details(e) {
 		this.setState({
-			showPopup: !this.state.showPopup
+			showPopup_details: !this.state.showPopup_details
 		});
-
-		return false;
 	}
-  	render(){
-    	return(
-        	<Fragment>
-            	<section className="animal_list content">
-                	<div className="top pb30">
+
+	//팝업 등록하기
+	togglePopup_write(e) {
+		this.setState({
+			showPopup_write: !this.state.showPopup_write
+		});
+	}	
+	
+	//상단 지역 선택
+	onChangeArea(Area){
+		this.setState({area_active : Area})
+	}
+
+	//동물 분류 나누기 
+	onClickSortKind(kind){
+		this.setState({sort_kind : kind})
+	}
+
+	//상태 분류 나누기 
+	onClickSortState(state){
+		this.setState({sort_state : state})
+	}
+
+	render(){
+		//지역 분류
+		const area_sort = this.state.areaArr.map((area, index) => {
+			return(
+				<span 
+					key={ index } 
+					className={ (this.state.area_active === area.value)? 'on' : '' } 
+					onClick={ (e) => this.onChangeArea(area.value) }>
+						{ area.name }
+				</span>
+			)
+		})
+		//종 분류
+		const kind_sort = this.state.kindArr.map((kind, index) => {
+			return(
+				<button 
+					key={ index } 
+					className={ (this.state.sort_kind === kind.value)? 'on' : '' } 
+					onClick={ (e) => this.onClickSortKind(kind.value) }>
+						{ kind.name }
+				</button>
+			)
+		})
+
+		//상태분류
+		const state_sort = this.state.stateArr.map((state, index) => {
+			return(
+				<button 
+					key = { index }
+					className={this.state.sort_state === state.value ? 'on':''} 
+					onClick={(e) => this.onClickSortState(state.value)}>
+						{state.name}
+				</button>
+			)
+		})
+
+		return(
+			<Fragment>
+				<section className="animal_list content">
+					<div className="top pb30">
 						<h1 className="tit">입양</h1>
 						<p className="subtxt pb20">평생을 함께할 가족을 찾아요!</p>
-						<p className="btn_wrap roundBtn_wrap">
-							<span className="on">전체</span>
-							<span>서울</span>
-							<span>강원도</span>
-							<span>충청도</span>
-							<span>전라도</span>
-							<span>경상도</span>
-							<span>제주도</span>
-						</p>
+						<p className="btn_wrap roundBtn_wrap">{area_sort}</p>
 					</div>
 					<div className="mid">
 						<div className="btn_wrap">
-							<span className="sort kind">
-								<span className="on">강아지</span>
-								<span>고양이</span>
-							</span>
-							<span className="sort state">
-								<span className="on">진행 중</span>
-								<span>완료</span>
-							</span>
+							<span className="sort kind">{kind_sort}</span>
+							<span className="sort state">{state_sort}</span>
 							<div className="roundBtn_wrap">
-								<span>등록하기</span>
+								<span onClick={this.togglePopup_write.bind(this)}>등록하기</span>
 							</div>
 						</div>
 
 						<ul className="list_wrap">
-							<li state="on" onClick={this.togglePopup.bind(this)}>
+							<li state="on" onClick={this.togglePopup_details.bind(this)}>
 								<div className="thumb" style={{"backgroundImage":"url(https://www.catjoa.com/dog_sale/photo_free/201912/1577725900_26588400.jpg)"}}></div>  
 								<div className="txtBx">
 									<p className="tit pb10">임보 보호자를 찾아요</p>
@@ -64,7 +143,7 @@ class Adoption extends Component {
 									</p>
 								</div>
 							</li>
-							<li state="off" onClick={this.togglePopup.bind(this)}>
+							<li state="off" onClick={this.togglePopup_details.bind(this)}>
 								<div className="thumb" style={{"backgroundImage":"url(https://www.catjoa.com/dog_sale/photo_free/202001/1577847202_42135700.jpg)"}}></div>  
 								<div className="txtBx">
 									<p className="tit pb10">임보 보호자를 찾아요</p>
@@ -79,7 +158,7 @@ class Adoption extends Component {
 									</p>
 								</div>
 							</li>
-							<li state="on" onClick={this.togglePopup.bind(this)}>
+							<li state="on" onClick={this.togglePopup_details.bind(this)}>
 								<div className="thumb" style={{"backgroundImage":"url(https://www.catjoa.com/dog_sale/photo_free/202001/1577845030_59707000.gif)"}}></div>  
 								<div className="txtBx">
 									<p className="tit pb10">임보 보호자를 찾아요</p>
@@ -96,12 +175,15 @@ class Adoption extends Component {
 							</li>
 						</ul>
 					</div>
-					{this.state.showPopup ? <AnimalDetails closePopup={this.togglePopup.bind(this)}/>: null}
+					{/* 상세보기 팝업*/}
+					{this.state.showPopup_details ? <AnimalDetails closePopup={this.togglePopup_details.bind(this)}/>: null}
 
-            	</section>
-        	</Fragment>
-   		)
-  	}
+					{/* 등록하기 팝업*/}
+					{this.state.showPopup_write ? <BoardWrite closePopup={this.togglePopup_write.bind(this)}/>: null}
+				</section>
+			</Fragment>
+		)
+	}
 }
 
 

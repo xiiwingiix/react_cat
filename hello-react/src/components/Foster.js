@@ -9,7 +9,7 @@ import '../css/style.css';
 class Foster extends Component {
 	constructor(props){
 		super(props);
-		this.onChangeSortKind = this.onChangeSortKind.bind(this);
+		this.onClickSortKind = this.onClickSortKind.bind(this);
 		this.state = {
 			showPopup_details : false,
 			showPopup_write : false,
@@ -40,7 +40,12 @@ class Foster extends Component {
 				{value : 'etc', name : '기타'},
 				{value : 'all', name : '전체'}
 			],
-			sort_state : 'isGoing'
+			sort_state : 'isGoing',
+			stateArr :[
+				{value : 'isGoing', name : '진행중'},
+				{value : 'done', name : '완료'},
+				{value : 'all', name : '전체'}
+			]
 		}
 	}
 	//팝업 상세보기
@@ -48,77 +53,77 @@ class Foster extends Component {
 		this.setState({
 			showPopup_details: !this.state.showPopup_details
 		});
-
-		return false;
 	}
+
 	//팝업 등록하기
 	togglePopup_write(e) {
 		this.setState({
 			showPopup_write: !this.state.showPopup_write
 		});
-
-		return false;
 	}	
+	
 	//상단 지역 선택
 	onChangeArea(Area){
 		this.setState({area_active : Area})
 	}
 
 	//동물 분류 나누기 
-	onClickSortKind(e){
-		this.setState({sort_kind : e.target.value})
-		console.log(this.state.sort_kind)
+	onClickSortKind(kind){
+		this.setState({sort_kind : kind})
 	}
-	render(){
 
+	//상태 분류 나누기 
+	onClickSortState(state){
+		this.setState({sort_state : state})
+	}
+
+	render(){
+		//지역 분류
+		const area_sort = this.state.areaArr.map((area, index) => {
+			return(
+				<span 
+					key={ index } 
+					className={ (this.state.area_active === area.value)? 'on' : '' } 
+					onClick={ (e) => this.onChangeArea(area.value) }>
+						{ area.name }
+				</span>
+			)
+		})
+		//종 분류
+		const kind_sort = this.state.kindArr.map((kind, index) => {
+			return(
+				<button 
+					key={ index } 
+					className={ (this.state.sort_kind === kind.value)? 'on' : '' } 
+					onClick={ (e) => this.onClickSortKind(kind.value) }>
+						{ kind.name }
+				</button>
+			)
+		})
+
+		//상태분류
+		const state_sort = this.state.stateArr.map((state, index) => {
+			return(
+				<button 
+					key = { index }
+					className={this.state.sort_state === state.value ? 'on':''} 
+					onClick={(e) => this.onClickSortState(state.value)}>
+						{state.name}
+				</button>
+			)
+		})
 		return(
 			<Fragment>
 				<section className="animal_list content">
 					<div className="top pb30">
 						<h1 className="tit">임시 보호</h1>
 						<p className="subtxt pb20">잠시나마 우리의 사랑을 나누어 주세요.</p>
-						<p className="btn_wrap roundBtn_wrap">
-							{
-								this.state.areaArr.map((area, index) => {
-									return(
-										<span 
-											key={ index } 
-											className={ (this.state.area_active === area.value)? 'on' : '' } 
-											onClick={ (e) => this.onChangeArea(area.value) }>
-												{ area.name }
-										</span>
-									)
-								})
-							}
-						</p>
+						<p className="btn_wrap roundBtn_wrap">{area_sort}</p>
 					</div>
 					<div className="mid">
 						<div className="btn_wrap">
-							<span className="sort kind">
-								{
-									this.state.kindArr.map((kind, index) => {
-										return(
-											<span 
-												key={ index } 
-												className={ (this.state.kind_active === kind.value)? 'on' : '' } 
-												onClick={ (e) => this.onClickSortKind(kind.value) }>
-													{ kind.name }
-											</span>
-										)
-									})
-								}
-
-								{/* <button className={this.state.sort_kind === 'dog' ? 'on':''} onClick={this.onClickSortKind} value = 'dog'>강아지</button>
-								<button className={this.state.sort_kind === 'cat' ? 'on':''} onClick={this.onClickSortKind} value = 'cat'>고양이</button>
-								<button className={this.state.sort_kind === 'etc' ? 'on':''} onClick={this.onClickSortKind} value = 'etc'>기타</button>
-								<button className={this.state.sort_kind === 'all' ? 'on':''} onClick={this.onClickSortKind} value = 'all'>전체</button> */}
-							</span>
-							<span className="sort state">
-								<button className={this.state.sort_state === 'isGoing' ? 'on':''} onClick={this.onChangeSortKind} value = 'isGoing'>진행 중</button>
-								<button className={this.state.sort_state === 'done' ? 'on':''} onClick={this.onChangeSortKind} value = 'done'>완료</button>
-								<button className={this.state.sort_state === 'all' ? 'on':''} onClick={this.onChangeSortKind} value = 'isGoing'>전체</button>
-
-							</span>
+							<span className="sort kind">{kind_sort}</span>
+							<span className="sort state">{state_sort}</span>
 							<div className="roundBtn_wrap">
 								<span onClick={this.togglePopup_write.bind(this)}>등록하기</span>
 							</div>
