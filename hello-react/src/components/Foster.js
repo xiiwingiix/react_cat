@@ -33,18 +33,18 @@ class Foster extends Component {
 				{ value: "경남", name: "경남" },
 				{ value: "제주", name: "제주" }
 			],
-			sort_kind : 'dog',
+			sort_kind : 'all',
 			kindArr :[
+				{value : 'all', name : '전체'},
 				{value : 'dog', name : '강아지'},
 				{value : 'cat', name : '고양이'},
-				{value : 'etc', name : '기타'},
-				{value : 'all', name : '전체'}
+				{value : 'etc', name : '기타'}
 			],
 			sort_state : 'isGoing',
 			stateArr :[
+				{value : 'all', name : '전체'},
 				{value : 'isGoing', name : '진행중'},
-				{value : 'done', name : '완료'},
-				{value : 'all', name : '전체'}
+				{value : 'done', name : '완료'}
 			]
 		}
 	}
