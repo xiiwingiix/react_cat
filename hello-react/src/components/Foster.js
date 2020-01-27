@@ -12,7 +12,18 @@ class Foster extends Component {
 		this.state = {
             showPopup_details : false,
             showPopup_write : false,
-            area_active : '전체'
+            area_active : '전체',
+            areaArr: [
+                { value: "전체", name: "전체" },
+                { value: "서울", name: "서울" },
+                { value: "경기", name: "경기" },
+                { value: "인천", name: "인천" },
+                { value: "부산", name: "부산" },
+                { value: "대구", name: "대구" },
+                { value: "광주", name: "광주" },
+                { value: "대전", name: "대전" },
+                { value: "울산", name: "울산" },
+            ],
             
 		}
 	}

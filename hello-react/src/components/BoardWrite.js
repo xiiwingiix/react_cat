@@ -71,7 +71,7 @@ class BoardWrite extends Component {
 								<div>
 									<ul>
 										<li>
-											<div className = 'tit'>지역</div>
+											<div className ='tit'>지역</div>
 											<div className="subtxt">
 												<select name="city" title="시/도선택" className="select width2 " onChange={this.onChangeSelectCity} defaultValue ={this.state.selectedCity}>{cityOption}</select>
 												<select name="country" title="시/군/구선택" className="select width2 ">{countryOption}</select>
