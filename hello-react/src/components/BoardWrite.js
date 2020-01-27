@@ -28,91 +28,165 @@ class BoardWrite extends Component {
 				{id :1, classify :'dog', kind:["골든리트리버","그레이트덴","그레이트피레니즈","그레이하운드","꼬똥드툴레아","뉴펀들랜드","닥스훈트","달마시안","도고아르젠티노","도베르만","라브라도 리트리버","라사압소","라이카","로트와일러","마리노이즈","마스티프","말티즈","미니핀","바센지","바셋하운드","바이마리너","버니즈마운틴독","베들링턴 테리어","보더콜리","보스톤테리어","복서","볼조이","불개","불독","불테리어","브러쉘그리폰","브리타니","비글","비숑프리제","비어디드콜리","비즐라","빠삐용","사모예드","삽살이","샤페이","세인트버나드","세퍼트","셰틀랜드쉽독","슈나우저","스탠다드 푸들","시바견","시베리안허스키","시츄","아메리카코커스파니엘","아이리쉬세타","아키타","아프간하운드","알래스카 말라뮤트","에어데일 테리어","오브차카","올드 잉글리쉬 쉽독","와이어 폭스테리어","요크셔테리어","웰쉬코기 카디건","잉글리쉬코카스파니엘","잭 러셀 테리어","저패니즈스피츠","진돗개","차우차우","치와와","친(chin)","케인코르소","콜리","킹찰스스파니엘","토이푸들","퍼그","페키니즈","펨브록 웰시 코기","포메라니안","포인터","푸들","풍산개","프랜치불독","핏불테리어","화이트테리어","기타"]},
 				{id :2, classify :'cat', kind:["노르웨이 숲","러시안 블루","뱅갈","버밀라","버미즈","버만","브리티쉬 숏헤어","사바나캣","샴","스코티쉬 폴드","스핑크스","아메리칸 밥테일","아메리칸 숏헤어","아비시니안","이집트 마우","엑죠틱 숏헤어","재패니스 밥테일","친칠라","터키쉬 밴","터키쉬 앙고라","페르시안","하바나","한국 고양이","히말라야","오리엔탈숏헤어","오리엔탈롱헤어","아메리칸와이어헤어","아메리칸머마즈","유럽피안버마즈","하바나브라운","아메리칸컬","코니쉬렉스","스노우슈","먼치킨","데몬렉스","싱가푸라","롱키니즈","메인쿤","소말리","봄베이","망스","라펌","렉돌","네바마스커레이드","셀커크 렉스","기타"]},
 				{id :3, classify :'etc', kind : ['햄스터','앵무새','거북이','기타']}
-			]
+			],
+			selectGender : 'male',
+			TNRyn : 'y',
+			years : 1
 		}
 	}
 	componentDidMount(){
 
 	}
 	// 시/도 select 변경
-	onChangeSelectCity = (e) => {
+	onChangeCity = (e) => {
 		this.setState({selectedCity : e.target.value});
 	}
-	// 동물 종류 변경
-	onChangeSelectKind = (e) => {
-		this.setState({selectedKind : e.target.value});
 
+	// 동물 종류 변경
+	onChangeKind = (e) => {
+		this.setState({selectedKind : e.target.value});
+	}
+
+	//성별 변경
+	onChangeGender = (e) => {
+		this.setState({selectGender : e.target.value});
+	}
+	//중성화 여부
+	onChangeTNRYN = (e) => {
+		this.setState({TNRyn : e.target.value});
+	}
+	//나이
+	onClickAgecnt = (e) => {
+		if(e.target.value === 'minus'){
+
+			if(this.state.years <= 1 ||  this.state.years === '1살 이하'){
+				this.setState({years : '1살 이하'})
+				return false;
+			}else {
+				this.setState({years : this.state.years-1})
+			}
+		}else if (e.target.value === 'plus') {
+			if( this.state.years === '1살 이하'){
+				this.setState({years : 1})
+				return false;
+			}else {
+				this.setState({years : this.state.years+1})
+			}
+		}
 	}
 
 	render(){
 		// 시/도 옵션
-		const cityOption = this.state.address_opt.map((addr, index) =>
+		const cityOption = this.state.address_opt.map((addr, index) => 
 			<option value = {addr.city} key = {index}>{addr.city}</option>
 		)
 
 		// 시/군/구 옵션
-		const countryArray = this.state.address_opt.find(addr =>
+		const countryArray = this.state.address_opt.find(addr => 
 			addr.city === this.state.selectedCity
 		);
-		const countryOption = countryArray.country.map((addr, index) =>
+		const countryOption = countryArray.country.map((addr, index) => 
 			<option value = {addr} key = {index}>{addr}</option>
 		)
 
-		// 품종 옵션
+		//동물 종류 옵션
 		const kindArray = this.state.kind.find(addr => addr.classify === this.state.selectedKind);
-		const kindOption = kindArray.kind.map((addr, index) =>
+		const kindOption = kindArray.kind.map((addr, index) => 
 			<option value = {addr} key = {index}>{addr}</option>
 		)
-
 		// console.log('선택된 도시 :'+this.state.selectedCity+'   선택된 동물:'+this.state.selectedKind);
 
-		return(
-			<Fragment>
-				<div className="pop BoardWrite" >
+    	return(
+        	<Fragment>
+                <div className="pop BoardWrite" >
 					<div className="outer">
 						<div className="inner">
 							<div className="centered pop_wrap">
-								<button className="close_btn" onClick={this.props.closePopup}>&times;</button>
+                                <button className="close_btn" onClick={this.props.closePopup}>&times;</button>
 								<div>
 									<ul>
 										<li>
-											<div className='tit'>지역</div>
+											<div className ='tit'>지역</div>
 											<div className="subtxt">
-												<select name="city" title="시/도선택" className="select width2 " onChange={this.onChangeSelectCity} defaultValue ={this.state.selectedCity}>{cityOption}</select>
+												<select 
+													name = "city" 
+													title = "시/도선택" 
+													className ="select width2 " 
+													onChange = {this.onChangeCity} 
+													defaultValue = {this.state.selectedCity}
+												>
+													{cityOption}
+												</select>
 												<select name="country" title="시/군/구선택" className="select width2 ">{countryOption}</select>
 											</div>
 										</li>
 										<li>
 											<div className="tit">동물선택</div>
 											<div className="subtxt">
-												<button className={'width4 '+ (this.state.selectedKind === 'dog' ? 'on':'')} onClick = {this.onChangeSelectKind} value = 'dog'>강아지</button>
-												<button className={'width4 '+ (this.state.selectedKind === 'cat' ? 'on':'')} onClick = {this.onChangeSelectKind} value = 'cat'>고양이</button>
-												<button className={'width4 '+ (this.state.selectedKind === 'etc' ? 'on':'')} onClick = {this.onChangeSelectKind} value = 'etc'>기타</button>
+												<button 
+													className={'width4 '+ (this.state.selectedKind === 'dog' ? 'on':'')} 
+													onClick = {(e) => this.onChangeKind(e)} 
+													value = "dog"
+												>개</button>
+												<button 
+													className={'width4 '+ (this.state.selectedKind === 'cat' ? 'on':'')} 
+													onClick = {(e) => this.onChangeKind(e)} 
+													value = "cat"
+												>고양이</button>
+												<button 
+													className={'width4 '+ (this.state.selectedKind === 'etc' ? 'on':'')} 
+													onClick = {(e) => this.onChangeKind(e)} 
+													value = "etc"
+												>기타</button>
 											</div>
 											<div className="tit">품종</div>
 											<div className="subtxt">
 												<select className="width1" name="kind">{kindOption}</select>
 											</div>
-
+									
 											<div className="tit">성별</div>
 											<div className="subtxt">
-												<button className="width4 on">남</button>
-												<button className="width4">여</button>
+												<button 
+													className={'width4 '+ (this.state.selectGender === 'male' ? 'on':'')} 
+													onClick = {(e) => this.onChangeGender(e)}
+													value = 'male'
+												>남</button>
+												<button 
+													className={'width4 '+ (this.state.selectGender === 'female' ? 'on':'')} 
+													onClick = {(e) => this.onChangeGender(e)}
+													value = 'female'
+												>여</button>
 											</div>
-
-											<div className="tit">중성화</div>
-											<div className="subtxt">
-												<button className="width4 on">예</button>
-												<button className="width4">아니오</button>
+									
+											<div className = "tit">중성화</div>
+											<div className = "subtxt">
+												<button 
+													className = {'width4 '+ (this.state.TNRyn === 'y' ? 'on':'')}
+													onClick = {(e) => this.onChangeTNRYN(e)}
+													value ='y'
+												>예</button>
+												<button 
+													className = {'width4 '+ (this.state.TNRyn === 'n' ? 'on':'')}
+													onClick = {(e) => this.onChangeTNRYN(e)}
+													value ='n'
+												>아니오</button>
 											</div>
-
+									
 											<div className="tit">나이</div>
 											<div className="subtxt">
-												<button className="btn_cnt minus">-</button>
-												<input className="width4 input_cnt" type="text"/>
-												<button className="btn_cnt plus">+</button>
+												<button 
+													className = "btn_cnt minus"
+													onClick = {(e) => this.onClickAgecnt(e)}
+													value = "minus"
+												>-</button>
+												<input className="width4 input_cnt" type="text" value ={this.state.years}/>
+												<button 
+													className="btn_cnt plus"
+													onClick = {(e) => this.onClickAgecnt(e)}
+													value = "plus"
+													>+</button>
 											</div>
-
+									
 											<div className="tit">예방접종</div>
 											<div className="subtxt">
 												<button className="width4 on">예</button ><button className="width4">아니오</button><br/>
@@ -152,13 +226,13 @@ class BoardWrite extends Component {
 										<button className="btn_ok">등록 완료</button>
 									</div>
 								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</Fragment>
-		);
-	}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </Fragment>
+        );
+    }
 }
 
 export default BoardWrite;
