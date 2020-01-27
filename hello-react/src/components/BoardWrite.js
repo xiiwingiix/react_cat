@@ -39,39 +39,44 @@ class BoardWrite extends Component {
 		this.setState({selectedCity : e.target.value});
 	}
 	// 동물 종류 변경
-	onChangeSelectKind = (kind) => {
-		this.setState({selectedKind : kind});
+	onChangeSelectKind = (e) => {
+		this.setState({selectedKind : e.target.value});
+
 	}
 
 	render(){
 		// 시/도 옵션
-		const cityOption = this.state.address_opt.map(
-			(addr, index) => <option value = {addr.city} key = {index}>{addr.city}</option>
+		const cityOption = this.state.address_opt.map((addr, index) =>
+			<option value = {addr.city} key = {index}>{addr.city}</option>
 		)
 
 		// 시/군/구 옵션
-		const countryArray = this.state.address_opt.find(addr => addr.city === this.state.selectedCity);
-		const countryOption = countryArray.country.map(
-			(addr, index) => <option value = {addr} key = {index}>{addr}</option>
+		const countryArray = this.state.address_opt.find(addr =>
+			addr.city === this.state.selectedCity
+		);
+		const countryOption = countryArray.country.map((addr, index) =>
+			<option value = {addr} key = {index}>{addr}</option>
 		)
 
+		// 품종 옵션
 		const kindArray = this.state.kind.find(addr => addr.classify === this.state.selectedKind);
-		const kindOption = kindArray.kind.map(
-			(addr, index) => <option value = {addr} key = {index}>{addr}</option>
+		const kindOption = kindArray.kind.map((addr, index) =>
+			<option value = {addr} key = {index}>{addr}</option>
 		)
+
 		// console.log('선택된 도시 :'+this.state.selectedCity+'   선택된 동물:'+this.state.selectedKind);
 
-    	return(
-        	<Fragment>
-                <div className="pop BoardWrite" >
+		return(
+			<Fragment>
+				<div className="pop BoardWrite" >
 					<div className="outer">
 						<div className="inner">
 							<div className="centered pop_wrap">
-                                <button className="close_btn" onClick={this.props.closePopup}>&times;</button>
+								<button className="close_btn" onClick={this.props.closePopup}>&times;</button>
 								<div>
 									<ul>
 										<li>
-											<div className ='tit'>지역</div>
+											<div className='tit'>지역</div>
 											<div className="subtxt">
 												<select name="city" title="시/도선택" className="select width2 " onChange={this.onChangeSelectCity} defaultValue ={this.state.selectedCity}>{cityOption}</select>
 												<select name="country" title="시/군/구선택" className="select width2 ">{countryOption}</select>
@@ -80,34 +85,34 @@ class BoardWrite extends Component {
 										<li>
 											<div className="tit">동물선택</div>
 											<div className="subtxt">
-												<button className="width4 on" onClick = {(e) => this.onChangeSelectKind('dog')}>개</button>
-												<button className="width4" onClick = {(e) => this.onChangeSelectKind('cat')}>고양이</button>
-												<button className="width4" onClick = {(e) => this.onChangeSelectKind('etc')}>기타</button>
+												<button className={'width4 '+ (this.state.selectedKind === 'dog' ? 'on':'')} onClick = {this.onChangeSelectKind} value = 'dog'>강아지</button>
+												<button className={'width4 '+ (this.state.selectedKind === 'cat' ? 'on':'')} onClick = {this.onChangeSelectKind} value = 'cat'>고양이</button>
+												<button className={'width4 '+ (this.state.selectedKind === 'etc' ? 'on':'')} onClick = {this.onChangeSelectKind} value = 'etc'>기타</button>
 											</div>
 											<div className="tit">품종</div>
 											<div className="subtxt">
 												<select className="width1" name="kind">{kindOption}</select>
 											</div>
-									
+
 											<div className="tit">성별</div>
 											<div className="subtxt">
 												<button className="width4 on">남</button>
 												<button className="width4">여</button>
 											</div>
-									
+
 											<div className="tit">중성화</div>
 											<div className="subtxt">
 												<button className="width4 on">예</button>
 												<button className="width4">아니오</button>
 											</div>
-									
+
 											<div className="tit">나이</div>
 											<div className="subtxt">
 												<button className="btn_cnt minus">-</button>
 												<input className="width4 input_cnt" type="text"/>
 												<button className="btn_cnt plus">+</button>
 											</div>
-									
+
 											<div className="tit">예방접종</div>
 											<div className="subtxt">
 												<button className="width4 on">예</button ><button className="width4">아니오</button><br/>
@@ -147,13 +152,13 @@ class BoardWrite extends Component {
 										<button className="btn_ok">등록 완료</button>
 									</div>
 								</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </Fragment>
-        );
-    }
+							</div>
+						</div>
+					</div>
+				</div>
+			</Fragment>
+		);
+	}
 }
 
 export default BoardWrite;
