@@ -1,166 +1,62 @@
-body {
-	font-family: 'Noto Sans KR', sans-serif;
-	font-weight: 300;
-	color:#333;
-	box-sizing: border-box;
-}
-ul, p{
-	padding : 0;
-	margin : 0;
-}
-li {
-	list-style : none;
-}
-button {
-	outline: none;
-}
-.width1 {width:calc(100% - 5px);}
-.width2 {width:calc(50% - 5px); margin-right: 5px; }
-.width3 {width:calc(33.3333% - 5px); margin-right: 5px;}
-.width4 {width:calc(25% - 5px); margin-right: 5px;}
-.width5 {width:calc(20% - 5px); margin-right: 5px;}
-.width10 {width:calc(10% - 5px); margin-right: 5px;}
+/* reset */
+body {font-family: 'Noto Sans KR', sans-serif;font-weight: 300;color:#333;box-sizing: border-box;}
+ul, p{padding : 0;margin : 0;}
+li {list-style : none;}
+
+input, input:focus, textarea, button {outline: none;}
+
+
+/* global */
+.width1 {width:calc(100% - 5px);} .width2 {width:calc(50% - 5px); margin-right: 5px; }.width3 {width:calc(33.3333% - 5px); margin-right: 5px;}.width4 {width:calc(25% - 5px); margin-right: 5px;}.width5 {width:calc(20% - 5px); margin-right: 5px;}.width10 {width:calc(10% - 5px); margin-right: 5px;}
+.py10 {padding-top: 10px;} .pt20 {padding-top: 20px;} .pt30 {padding-top: 30px;}
 .pb10 {padding-bottom: 10px;}.pb20 {padding-bottom: 20px;}.pb30 {padding-bottom: 30px;}
-.mt10 {margin-top:10px;}
-.mb20 {margin-bottom: 20px;}
-.none {display: none;}.block{display: block;}.inline {display: inline;}.inline-block{display: inline-block;}
+.mt10 {margin-top:10px;}.mt20 {margin-top: 20px;}.mt30 {margin-top: 30px;}
+.mb10 {margin-bottom: 10px;} .mb20 {margin-bottom: 20px;} .mb30 {margin-bottom: 30px;}
+.mr10 {margin-right: 10px;}
+.ml10 {margin-left: 10px;}
+.none {display: none;} .block{display: block;} .inline {display: inline;} .inline-block{display: inline-block;}
+.fs12 {font-size: 12px;} .fs14 {font-size:14px;} .fs16{font-size: 16px;}
 
-.content {
-	margin-top: 50px;
-}
-.top {
-	text-align: center;
-	border-bottom: 1px solid #ddd;
-}
-.top h1.tit{
-	font-size: 20px;
-}
-.mid {
-	background-color: #fafafa;
-}
+.text_pink {color:#fe7f9c}
+.text_gray {color:#959595}
 
-.outer{ 
-	position: absolute;
-	z-index: 1;
-	display: table;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-}
-.outer div.inner{
-	display: table-cell;
-	vertical-align: middle;
-	text-align: center;
-}
-.outer div.inner div.centered{
-	display: inline-block;
-	vertical-align: middle;
-}
-.outer div.inner div.centered button.close_btn {
-	position: absolute;
-	right: -2px;
-	top: -40px;
-	background: #000;
-	font-size: 30px;
-	color: #fff;
-	z-index: 10;
-	outline: none;
-	border: none;
-	width: 40px;
-	height: 40px;
-}
-.tit{
-	font-size: 16px;
-	font-weight: 400;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	display: -webkit-box;
-	-webkit-line-clamp: 2; /* 라인수 */
-	-webkit-box-orient: vertical;
-	word-wrap:break-word; 
-	line-height: 1.2em;
-	max-height: 2.4em;
-}
-.txt{
-	font-size: 13px;
-	padding: 15px 0 10px 0;
-	line-height: 21px;
-	color: #959595;
-}
-.info{
-	font-size: 12px;
-	color: #666;
-}
-.info span{
-	display: inline-block;
-}
-.info span::after{
-	content: '·';
-	padding: 0 5px;
-}
-.info span:last-child::after{
-	content: '';
-}
-.thumb {
-	background-size: cover;
-	background-position: center;
-}
-.btn_cancel {
-	border:1px solid #fe7f9c;
-	color: #fe7f9c;
-	background-color: #fff;
-	padding: 5px 10px;
-	cursor: pointer;
-}
-.btn_ok {
-	border:1px solid #fe7f9c;
-	background-color: #fe7f9c;
-	color:#fff;
-	padding: 5px 10px;
-	margin-left: 5px;
-	cursor: pointer;
-}
-/* 둥근 버튼 */
+.tit{font-size: 16px;font-weight: 400;overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 2; /* 라인수 */-webkit-box-orient: vertical;word-wrap:break-word; line-height: 1.2em;max-height: 2.4em;}
+.txt{font-size: 13px;padding: 15px 0 10px 0;line-height: 21px;color: #959595;}
+
+.btn_ok {border:1px solid #fe7f9c;background-color: #fe7f9c;color:#fff;padding: 5px 10px;margin-left: 5px;cursor: pointer;}
+.btn_cancel {border:1px solid #fe7f9c;color: #fe7f9c;background-color: #fff;padding: 5px 10px;cursor: pointer;}
+
 .roundBtn_wrap > span,
-.roundBtn_wrap > input.btn{
-	display: inline-block;
-	font-size: 13px;
-	padding: 0 10px ;
-	line-height: 21px;
-	color: #959595;
-	border: 1px solid #959595;
-	border-radius: 10px;
-	margin-right: 5px;
-	cursor: pointer;
-}
+.roundBtn_wrap > input.btn,
+.roundBtn_wrap > button{display:inline-block; font-size: 13px; padding: 0 10px ; line-height: 21px; color: #959595; border: 1px solid #959595; border-radius: 10px; margin-right: 5px; cursor: pointer;}
 .roundBtn_wrap > span.on,
 .roundBtn_wrap > span:hover,
-.roundBtn_wrap > input.btn:hover{
-	color: #fe7f9c;
-	border: 1px solid #fe7f9c;
-}
+.roundBtn_wrap > button:hover,
+.roundBtn_wrap > input.btn:hover{color:#fe7f9c; border: 1px solid #fe7f9c;}
+
+.thumb {background-size: cover;background-position: center;}
+
+.info{font-size: 12px;color: #666;}
+.info span{display: inline-block;}
+.info span::after{content: '·';padding: 0 5px;}
+.info span:last-child::after{content: '';}
+
+/* 본문 레이아웃 */
+.content {margin-top: 50px;}
+.top {text-align: center; border-bottom: 1px solid #ddd;}
+.top h1.tit{font-size: 20px;}
+.mid {background-color: #fafafa;}
+
+/* 팝업 레이아웃*/
+.outer{ position: absolute;z-index: 1;display: table;top: 0;left: 0;width: 100%;height: 100%;}
+.outer div.inner{display: table-cell;vertical-align: middle;text-align: center;}
+.outer div.inner div.centered{display: inline-block;vertical-align: middle;}
+.outer div.inner div.centered button.close_btn {position: absolute;right: -2px;top: -40px;background: #000;font-size: 30px;color: #fff;z-index: 10;outline: none;border: none;width: 40px;height: 40px;}
+
 /* 스와이프 */
-.swiper-container{
-	width: 100%;
-}
-.swiper-container img {
-	width: 100%;
-}
+.swiper-container{width: 100%;}
+.swiper-container img {width: 100%;}
 .swiper-button-next:after, .swiper-container-rtl .swiper-button-prev:after,
-.swiper-button-prev:after, .swiper-container-rtl .swiper-button-next:after {
-	content: ''; 
-	background-position: 0 0;
-}
-.swiper-button-next, .swiper-button-prev {
-	width:106px;
-	height: 127px;
-	background-image: url(../img/arrow.png);
-	background-repeat: no-repeat;
-}
-.swiper-button-next {
-	background-position: 0 0;
-}
-.swiper-button-next {
-	background-position: -105px 0;
-}
+.swiper-button-prev:after, .swiper-container-rtl .swiper-button-next:after {content: ''; background-position: 0 0;}
+.swiper-button-next, .swiper-button-prev {width:106px;height: 127px;background-image: url(../img/arrow.png);background-repeat: no-repeat;}
+.swiper-button-next {background-position: -105px 0;}

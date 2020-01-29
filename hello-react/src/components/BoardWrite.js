@@ -31,7 +31,8 @@ class BoardWrite extends Component {
 			],
 			selectGender : 'male',
 			TNRyn : 'y',
-			years : 1
+			years : 1,
+			vaccin_YN : 'y'
 		}
 	}
 	componentDidMount(){
@@ -41,37 +42,37 @@ class BoardWrite extends Component {
 	onChangeCity = (e) => {
 		this.setState({selectedCity : e.target.value});
 	}
+	//설정 변경
+	onChangeInfo = (item, e) => {
+		switch (item){
+			case 'kind' : 
+				this.setState({selectedKind : e.target.value});
+			case 'gender' : 
+				this.setState({selectGender : e.target.value});
+			case 'TNR' :
+				this.setState({TNRyn : e.target.value});
+			case 'Age' :
+				if(e.target.value === 'minus'){
 
-	// 동물 종류 변경
-	onChangeKind = (e) => {
-		this.setState({selectedKind : e.target.value});
-	}
-
-	//성별 변경
-	onChangeGender = (e) => {
-		this.setState({selectGender : e.target.value});
-	}
-	//중성화 여부
-	onChangeTNRYN = (e) => {
-		this.setState({TNRyn : e.target.value});
-	}
-	//나이
-	onClickAgecnt = (e) => {
-		if(e.target.value === 'minus'){
-
-			if(this.state.years <= 1 ||  this.state.years === '1살 이하'){
-				this.setState({years : '1살 이하'})
-				return false;
-			}else {
-				this.setState({years : this.state.years-1})
-			}
-		}else if (e.target.value === 'plus') {
-			if( this.state.years === '1살 이하'){
-				this.setState({years : 1})
-				return false;
-			}else {
-				this.setState({years : this.state.years+1})
-			}
+					if(this.state.years <= 1 ||  this.state.years === '1살 이하'){
+						this.setState({years : '1살 이하'});
+						return false;
+					}else {
+						this.setState({years : this.state.years-1});
+						return false;
+					}
+				}else if (e.target.value === 'plus') {
+					if( this.state.years === '1살 이하'){
+						this.setState({years : 1})
+						return false;
+					}else {
+						this.setState({years : this.state.years+1});
+						return false;
+					}
+				};
+			case 'Vaccin' :
+				this.setState({vaccin_YN : e.target.value});
+			break;
 		}
 	}
 
@@ -96,48 +97,28 @@ class BoardWrite extends Component {
 		)
 		// console.log('선택된 도시 :'+this.state.selectedCity+'   선택된 동물:'+this.state.selectedKind);
 
-    	return(
-        	<Fragment>
-                <div className="pop BoardWrite" >
+		return(
+			<Fragment>
+				<div className="pop BoardWrite" >
 					<div className="outer">
 						<div className="inner">
 							<div className="centered pop_wrap">
-                                <button className="close_btn" onClick={this.props.closePopup}>&times;</button>
+								<button className="close_btn" onClick={this.props.closePopup}>&times;</button>
 								<div>
 									<ul>
 										<li>
 											<div className ='tit'>지역</div>
 											<div className="subtxt">
-												<select 
-													name = "city" 
-													title = "시/도선택" 
-													className ="select width2 " 
-													onChange = {this.onChangeCity} 
-													defaultValue = {this.state.selectedCity}
-												>
-													{cityOption}
-												</select>
+												<select name = "city" title = "시/도선택" className ="select width2 " onChange = {this.onChangeCity} defaultValue = {this.state.selectedCity}>{cityOption}</select>
 												<select name="country" title="시/군/구선택" className="select width2 ">{countryOption}</select>
 											</div>
 										</li>
 										<li>
 											<div className="tit">동물선택</div>
 											<div className="subtxt">
-												<button 
-													className={'width4 '+ (this.state.selectedKind === 'dog' ? 'on':'')} 
-													onClick = {(e) => this.onChangeKind(e)} 
-													value = "dog"
-												>개</button>
-												<button 
-													className={'width4 '+ (this.state.selectedKind === 'cat' ? 'on':'')} 
-													onClick = {(e) => this.onChangeKind(e)} 
-													value = "cat"
-												>고양이</button>
-												<button 
-													className={'width4 '+ (this.state.selectedKind === 'etc' ? 'on':'')} 
-													onClick = {(e) => this.onChangeKind(e)} 
-													value = "etc"
-												>기타</button>
+												<button className={'width4 '+ (this.state.selectedKind === 'dog' ? 'on':'')} onClick = {(e) => this.onChangeInfo('kind', e)} value = "dog">개</button>
+												<button className={'width4 '+ (this.state.selectedKind === 'cat' ? 'on':'')} onClick = {(e) => this.onChangeInfo('kind', e)} value = "cat">고양이</button>
+												<button className={'width4 '+ (this.state.selectedKind === 'etc' ? 'on':'')} onClick = {(e) => this.onChangeInfo('kind', e)} value = "etc">기타</button>
 											</div>
 											<div className="tit">품종</div>
 											<div className="subtxt">
@@ -146,52 +127,28 @@ class BoardWrite extends Component {
 									
 											<div className="tit">성별</div>
 											<div className="subtxt">
-												<button 
-													className={'width4 '+ (this.state.selectGender === 'male' ? 'on':'')} 
-													onClick = {(e) => this.onChangeGender(e)}
-													value = 'male'
-												>남</button>
-												<button 
-													className={'width4 '+ (this.state.selectGender === 'female' ? 'on':'')} 
-													onClick = {(e) => this.onChangeGender(e)}
-													value = 'female'
-												>여</button>
+												<button className={'width4 '+ (this.state.selectGender === 'male' ? 'on':'')} onClick = {(e) => this.onChangeInfo('gender', e)} value = 'male'>남</button>
+												<button className={'width4 '+ (this.state.selectGender === 'female' ? 'on':'')} onClick = {(e) => this.onChangeInfo('gender', e)} value = 'female'>여</button>
 											</div>
 									
 											<div className = "tit">중성화</div>
 											<div className = "subtxt">
-												<button 
-													className = {'width4 '+ (this.state.TNRyn === 'y' ? 'on':'')}
-													onClick = {(e) => this.onChangeTNRYN(e)}
-													value ='y'
-												>예</button>
-												<button 
-													className = {'width4 '+ (this.state.TNRyn === 'n' ? 'on':'')}
-													onClick = {(e) => this.onChangeTNRYN(e)}
-													value ='n'
-												>아니오</button>
+												<button className = {'width4 '+ (this.state.TNRyn === 'y' ? 'on':'')} onClick = {(e) => this.onChangeInfo('TNR', e)} value ='y'>예</button>
+												<button className = {'width4 '+ (this.state.TNRyn === 'n' ? 'on':'')} onClick = {(e) => this.onChangeInfo('TNR', e)} value ='n'>아니오</button>
 											</div>
 									
 											<div className="tit">나이</div>
 											<div className="subtxt">
-												<button 
-													className = "btn_cnt minus"
-													onClick = {(e) => this.onClickAgecnt(e)}
-													value = "minus"
-												>-</button>
-												<input className="width4 input_cnt" type="text" value ={this.state.years}/>
-												<button 
-													className="btn_cnt plus"
-													onClick = {(e) => this.onClickAgecnt(e)}
-													value = "plus"
-													>+</button>
+												<button className = "btn_cnt minus" onClick = {(e) => this.onChangeInfo('Age', e)}value = "minus">-</button>
+												<input className="width4 input_cnt" type="text" value = {this.state.years}/>
+												<button className="btn_cnt plus" onClick = {(e) => this.onChangeInfo('Age', e)} value = "plus">+</button>
 											</div>
 									
 											<div className="tit">예방접종</div>
 											<div className="subtxt">
-												<button className="width4 on">예</button ><button className="width4">아니오</button><br/>
-												<input className="width2 mt10" type="text"/>
-												<button className="btn_subOpt ">삭제</button><button className="btn_subOpt">추가</button>
+												<button className={"width4 " + (this.state.vaccin_YN === 'y' ? 'on':'')} onClick = {(e) => this.onChangeInfo('Vaccin', e)} value ='y'>예</button >
+												<button className={"width4 " + (this.state.vaccin_YN === 'n' ? 'on':'')} onClick = {(e) => this.onChangeInfo('Vaccin', e)} value ='n'>아니오</button><br/>
+												<input className="width2 mt10" type="text" placeholder="종합백신 3차 완료, 광견병 등"/><span className="text_gray fs12 ml10 inline-block">예방접종 내역을 작성해주세요.</span>
 											</div>
 										</li>
 										<li>
@@ -202,9 +159,9 @@ class BoardWrite extends Component {
 										</li>
 										<li>
 											<div className="tit">연락처</div>
-											<div className="subtxt">
+											<div className="subtxt roundBtn_wrap">
 												<input className="width2" type="text"/><br/>
-											<input className="width2 mt10" type="text" placeholder="숫자코드 4자리 입력"/><button>인증번호 요청</button>
+												<input className="width2 mt10" type="text" placeholder="숫자코드 4자리 입력"/><button>인증번호 요청</button>
 											</div>
 										</li>
 										<li>
@@ -226,13 +183,13 @@ class BoardWrite extends Component {
 										<button className="btn_ok">등록 완료</button>
 									</div>
 								</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </Fragment>
-        );
-    }
+							</div>
+						</div>
+					</div>
+				</div>
+			</Fragment>
+		);
+	}
 }
 
 export default BoardWrite;
