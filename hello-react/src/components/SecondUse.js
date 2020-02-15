@@ -4,6 +4,7 @@ class SecondUse extends Component {
 	constructor(props){
 		super(props);
 		this.state = {
+			kind_active : 'all',
 			kindArr :[
 				{value : 'all', name : '전체'},
 				{value : 'dog', name : '강아지'},
@@ -15,7 +16,24 @@ class SecondUse extends Component {
 	componentDidMount(){
 
 	}
+	//상단 종 선택
+	onChangeKind(el){
+		console.log(el)
+		this.setState({kind_active : el})
+	}
 	render(){
+		//종 분류
+		const kind_sort = this.state.kindArr.map((el, index) => {
+			return(
+				<span
+					key = { index }
+					className = { (this.state.kind_active === el.value)? 'on' : '' }
+					onClick={ (e) => this.onChangeKind(el.value) }
+				>
+					{ el.name }
+				</span>
+			)
+		})
 		return(
 			<Fragment>
 				<section className="product secondUse content">
@@ -23,9 +41,7 @@ class SecondUse extends Component {
 						<h1 className="tit">중고 물품</h1>
 						<p className="subtxt pb20">사용하지 않는 반려 동물 물품 벼룩시장!</p>
 						<p className="btn_wrap roundBtn_wrap">
-							<span className="on">전체</span>
-							<span>고양이</span>
-							<span>강아지</span>
+							{ kind_sort }
 						</p>
 					</div>
 					<div className="mid">

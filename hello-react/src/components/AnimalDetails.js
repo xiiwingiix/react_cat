@@ -6,8 +6,10 @@ class AnimalDetails extends Component {
 	componentDidMount(){
 		var galleryThumbs = new Swiper('.gallery-thumbs', {
 			spaceBetween: 10,
-			slidesPerView: 'auto',
-			loopedSlides: 5,
+			slidesPerView: 4,
+			freeMode: true,
+			watchSlidesVisibility: true,
+			watchSlidesProgress: true,
 		});
 		new Swiper('.gallery-top', {
 			spaceBetween: 10,

@@ -240,7 +240,7 @@
 }
 .BoardWrite .pop_wrap > div > ul > li > div.subtxt > button{
     background-color: transparent;
-    /* border: 1px solid #c2c3c7; */
+    border: 1px solid #c2c3c7;
     height: 30px;
     border-radius: 15px;
     cursor: pointer;

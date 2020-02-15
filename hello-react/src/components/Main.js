@@ -47,6 +47,8 @@ class Main extends Component {
 				prevEl: '.swiper-button-prev',
 			},
 		});
+
+		return false;
 	}
 	render(){
 		return(

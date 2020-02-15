@@ -47,10 +47,13 @@ class BoardWrite extends Component {
 		switch (item){
 			case 'kind' : 
 				this.setState({selectedKind : e.target.value});
+				return false;
 			case 'gender' : 
 				this.setState({selectGender : e.target.value});
+				return false;
 			case 'TNR' :
 				this.setState({TNRyn : e.target.value});
+				return false;
 			case 'Age' :
 				if(e.target.value === 'minus'){
 
@@ -70,9 +73,12 @@ class BoardWrite extends Component {
 						return false;
 					}
 				};
+				return false;
 			case 'Vaccin' :
 				this.setState({vaccin_YN : e.target.value});
-			break;
+				return false;
+			default : 
+				return false;
 		}
 	}
 
